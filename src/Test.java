@@ -12,7 +12,9 @@ public class Test {
 
     public static void main(String[] args) {
 
-        RecipeService recipeService = new RecipeService();
-        List<String> recipeNames = recipeService.getMenu(JsonUtil.jsonToDictionary(DirectoryUtil.DICTIONARY_PATH), DirectoryUtil.getRecipeFileNames(DirectoryUtil.RECIPES_PATH));
+        RecipeService recipeService = new RecipeService(JsonUtil.jsonToDictionary(DirectoryUtil.DICTIONARY_PATH));
+        List<String> recipeNames = recipeService.getMenu(DirectoryUtil.getRecipeFileNames(DirectoryUtil.RECIPES_PATH));
+
+        Recipe recipe = recipeService.getRecipe("Шаурма"); // <-- Здесь текст нажатой кнопки
     }
 }
