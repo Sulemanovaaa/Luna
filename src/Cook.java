@@ -8,6 +8,8 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 
 public class Cook extends TelegramLongPollingBot {
 
+
+
     public static void main(String[] args) {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
@@ -34,9 +36,16 @@ public class Cook extends TelegramLongPollingBot {
         if (message != null && message.hasText()) {
             if (message.getText().equals("/help"))
                 sendMsg(message, "Привет, я робот");
+            if (message.getText().equals("Сделать заказ")) {
+                showMenu();
+            }
             else
                 sendMsg(message, "Я не знаю что ответить на это");
         }
+    }
+
+    private void showMenu() {
+
     }
 
     private void sendMsg(Message message, String text) {
