@@ -21,5 +21,9 @@
 
 ![alt text](http://www.fundraisingdetective.com/.a/6a011570955d69970b015391a98a29970b-pi)
 
+**Схема зависимости действий и настроения повара**
+
+![alt text](https://pp.userapi.com/c840727/v840727520/1010b/aJxtQ4fkY7U.jpg)
+
 **Ccылка на бота: https://t.me/Emotional_cookbot**
 
