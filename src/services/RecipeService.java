@@ -9,14 +9,12 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import static utils.JsonUtil.jsonToDictionary;
-
 public class RecipeService {
 
     Map<String, String> dictionary;
 
-    public RecipeService(Map<String, String> dictionary) {
-        this.dictionary = dictionary;
+    public RecipeService(Object dictionary) {
+        this.dictionary = (Map<String, String>) dictionary;
     }
 
     public List<String> getMenu(List<String> recipeFileNames) {
@@ -28,9 +26,9 @@ public class RecipeService {
         return recipeNames;
     }
 
-    public Recipe getRecipe(String recipeName) {
+    public Recipe getRecipe(Class recipe, String recipeName) {
         if (dictionary != null && dictionary.containsValue(recipeName)) {
-            return JsonUtil.jsonToRecipe(DirectoryUtil.RECIPES_PATH + MapUtil.getKeyByValue(dictionary, recipeName));
+            return (Recipe) JsonUtil.jsonToObject(recipe, DirectoryUtil.RECIPES_PATH + MapUtil.getKeyByValue(dictionary, recipeName)); //BAD SOLUTION
         }
         return null;
     }
