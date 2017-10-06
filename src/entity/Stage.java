@@ -1,11 +1,13 @@
 package entity;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Stage {
+
     private String name;
     private int time;
-    private ArrayList<Action> actions;
+
+    private LinkedList<Action> actions;
 
     public Stage(String name, int time) {
         this.name = name;

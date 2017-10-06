@@ -5,7 +5,7 @@ import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-
+/*
 public class Cook extends TelegramLongPollingBot {
 
     public static void main(String[] args) {
@@ -52,3 +52,4 @@ public class Cook extends TelegramLongPollingBot {
     }
 
 }
+*/
