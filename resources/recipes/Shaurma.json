@@ -6,25 +6,28 @@
 			"actions": [
 				{
 					"name": "First Action",
-					"ecstacy": 10,
-					"admiration": 11,
-					"terror": 12,
+
 					"amazement": 13,
-					"grief": 14,
-					"loathing": 15,
-					"rage": 16,
-					"vigilance": 17
+					"disgust": 13,
+					"confidence": 13,
+					"angry": 13,
+					"alertness": 13,
+					"fear": 13,
+					"happiness": 13,
+					"sadness": 13
+
 				},
 				{
 					"name": "Second Action",
-					"ecstacy": 20,
-					"admiration": 21,
-					"terror": 22,
-					"amazement": 23,
-					"grief": 24,
-					"loathing": 25,
-					"rage": 26,
-					"vigilance": 27
+
+					"amazement": -13,
+					"disgust": 13,
+					"confidence": -13,
+					"angry": 13,
+					"alertness": -13,
+					"fear": 13,
+					"happiness": -13,
+					"sadness": 13
 				}
 			]
 		},
@@ -34,25 +37,27 @@
 			"actions": [
 				{
 					"name": "First Action",
-					"ecstacy": 30,
-					"admiration": 31,
-					"terror": 32,
-					"amazement": 33,
-					"grief": 34,
-					"loathing": 35,
-					"rage": 36,
-					"vigilance": 37
+
+					"amazement": 13,
+					"disgust": 13,
+					"confidence": 13,
+					"angry": 13,
+					"alertness": 13,
+					"fear": 13,
+					"happiness": 13,
+					"sadness": 13
 				},
 				{
 					"name": "Second Action",
-					"ecstacy": 40,
-					"admiration": 41,
-					"terror": 42,
-					"amazement": 43,
-					"grief": 44,
-					"loathing": 45,
-					"rage": 46,
-					"vigilance": 47
+
+					"amazement": 13,
+					"disgust": 13,
+					"confidence": 13,
+					"angry": 13,
+					"alertness": 13,
+					"fear": 13,
+					"happiness": 13,
+					"sadness": 13
 				}
 			]
 		}
