@@ -1,5 +1,5 @@
 {
-	"name" = "Шаурма"; 
+	"name" : "Пицца",
 	"stages": [
 		{
 			"name": "First Stage",
@@ -28,8 +28,7 @@
 					"sadness": 27
 				}
 			]
-		},
-		{
+		},{
 			"name": "Second Stage",
 			"time": 10,
 			"actions": [
