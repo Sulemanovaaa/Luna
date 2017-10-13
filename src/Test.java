@@ -22,6 +22,8 @@ public class Test {
 
         List<String> recipeNames = recipeService.getMenu(DirectoryUtil.getRecipeFileNames(DirectoryUtil.RECIPES_PATH));
 
+        System.out.println(recipeNames.size());
+
         //ВЫБОР РЕЦЕПТА
 
         Recipe recipe = recipeService.getRecipe(Recipe.class, "Шаурма"); // <-- Здесь текст нажатой кнопки
