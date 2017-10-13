@@ -25,7 +25,7 @@
 
 ![alt text](https://pp.userapi.com/c639531/v639531271/5225f/CPiIn_QWuxk.jpg)
 
-![alt text](https://pp.userapi.com/c837232/v837232359/5cf87/IaoxLQaoMOA.jpg)
+![alt text](https://pp.userapi.com/c841232/v841232359/28dd8/YW4I9jb5xbs.jpg)
 
 
 **Ccылка на бота: https://t.me/Emotional_cookbot**
