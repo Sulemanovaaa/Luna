@@ -13,38 +13,13 @@ import java.util.Map;
 
 public class JsonUtil {
 
-/*
-    public static void LoadFile(String path) {
+    public static Object jsonToObject(Class template, String path) {
         try {
-            JsonReader reader = new JsonReader(new FileReader(path));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-*/
-
-    public static Map<String, String> jsonToDictionary(String path) {
-        try {
-            return new Gson().fromJson(new JsonReader(new FileReader(path)), LinkedHashMap.class);
+            return new Gson().fromJson(new JsonReader(new FileReader(path)), template);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         return null;
     }
-
-    public static Recipe jsonToRecipe(String path) {
-        try {
-            return new Gson().fromJson(new JsonReader(new FileReader(path)), Recipe.class);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-//    private
-//    List<String> recipesName
-//    Map<String, String> dictionary = new LinkedHashMap<String, String>();
-//        for (String )
 }
-
 

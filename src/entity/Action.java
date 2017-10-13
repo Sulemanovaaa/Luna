@@ -4,14 +4,14 @@ public class Action {
 
     private String name;
 
-    private int ecstacy;
-    private int admiration;
-    private int terror;
     private int amazement;
-    private int grief;
-    private int loathing;
-    private int rage;
-    private int vigilance;
+    private int disgust;
+    private int confidence;
+    private int angry;
+    private int alertness;
+    private int fear;
+    private int happiness;
+    private int sadness;
 
     public String getName() {
         return name;
@@ -19,30 +19,6 @@ public class Action {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getEcstacy() {
-        return ecstacy;
-    }
-
-    public void setEcstacy(int ecstacy) {
-        this.ecstacy = ecstacy;
-    }
-
-    public int getAdmiration() {
-        return admiration;
-    }
-
-    public void setAdmiration(int admiration) {
-        this.admiration = admiration;
-    }
-
-    public int getTerror() {
-        return terror;
-    }
-
-    public void setTerror(int terror) {
-        this.terror = terror;
     }
 
     public int getAmazement() {
@@ -53,35 +29,59 @@ public class Action {
         this.amazement = amazement;
     }
 
-    public int getGrief() {
-        return grief;
+    public int getDisgust() {
+        return disgust;
     }
 
-    public void setGrief(int grief) {
-        this.grief = grief;
+    public void setDisgust(int disgust) {
+        this.disgust = disgust;
     }
 
-    public int getLoathing() {
-        return loathing;
+    public int getConfidence() {
+        return confidence;
     }
 
-    public void setLoathing(int loathing) {
-        this.loathing = loathing;
+    public void setConfidence(int confidence) {
+        this.confidence = confidence;
     }
 
-    public int getRage() {
-        return rage;
+    public int getAngry() {
+        return angry;
     }
 
-    public void setRage(int rage) {
-        this.rage = rage;
+    public void setAngry(int angry) {
+        this.angry = angry;
     }
 
-    public int getVigilance() {
-        return vigilance;
+    public int getAlertness() {
+        return alertness;
     }
 
-    public void setVigilance(int vigilance) {
-        this.vigilance = vigilance;
+    public void setAlertness(int alertness) {
+        this.alertness = alertness;
+    }
+
+    public int getFear() {
+        return fear;
+    }
+
+    public void setFear(int fear) {
+        this.fear = fear;
+    }
+
+    public int getHappiness() {
+        return happiness;
+    }
+
+    public void setHappiness(int happiness) {
+        this.happiness = happiness;
+    }
+
+    public int getSadness() {
+        return sadness;
+    }
+
+    public void setSadness(int sadness) {
+        this.sadness = sadness;
     }
 }

@@ -3,6 +3,7 @@ import services.RecipeService;
 import utils.DirectoryUtil;
 import utils.JsonUtil;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,9 +13,17 @@ public class Test {
 
     public static void main(String[] args) {
 
-        RecipeService recipeService = new RecipeService();
-        List<String> recipeNames = recipeService.getMenu(JsonUtil.jsonToDictionary(DirectoryUtil.DICTIONARY_PATH),
-                DirectoryUtil.getRecipeFileNames(DirectoryUtil.RECIPES_PATH));
-        System.out.println("Колличесво блюд в меню - " + recipeNames.size());
+        InitNewRecipe();
+    }
+
+    private static void InitNewRecipe() {
+
+        RecipeService recipeService = new RecipeService(JsonUtil.jsonToObject(LinkedHashMap.class, DirectoryUtil.DICTIONARY_PATH));
+
+        List<String> recipeNames = recipeService.getMenu(DirectoryUtil.getRecipeFileNames(DirectoryUtil.RECIPES_PATH));
+
+        //ВЫБОР РЕЦЕПТА
+
+        Recipe recipe = recipeService.getRecipe(Recipe.class, "Шаурма"); // <-- Здесь текст нажатой кнопки
     }
 }

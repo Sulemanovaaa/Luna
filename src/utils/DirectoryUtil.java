@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class DirectoryUtil {
 
-    public static final String RECIPES_PATH = "./resources/recipes";
+    public static final String RECIPES_PATH = "./resources/recipes/";
     public static final String DICTIONARY_PATH = "./resources/dictionary.json";
     private static final String JSON_EXTENSION = "json";
 
