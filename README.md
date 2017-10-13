@@ -23,7 +23,7 @@
 
 **Схема зависимости действий и настроения повара**
 
-![alt text](https://pp.userapi.com/c840727/v840727520/1010b/aJxtQ4fkY7U.jpg)
+![alt text](https://pp.userapi.com/c639531/v639531271/5225f/CPiIn_QWuxk.jpg)
 
 ![alt text](https://pp.userapi.com/c837232/v837232359/5cf87/IaoxLQaoMOA.jpg)
 
