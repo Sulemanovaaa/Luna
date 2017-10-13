@@ -1,4 +1,6 @@
+import entity.Action;
 import entity.Recipe;
+import entity.Stage;
 import services.RecipeService;
 import utils.DirectoryUtil;
 import utils.JsonUtil;
@@ -18,12 +20,20 @@ public class Test {
 
     private static void InitNewRecipe() {
 
-        RecipeService recipeService = new RecipeService(JsonUtil.jsonToObject(LinkedHashMap.class, DirectoryUtil.DICTIONARY_PATH));
+        RecipeService recipeService = new RecipeService();
+        recipeService.init();
+        recipeService.loadData();
 
-        List<String> recipeNames = recipeService.getMenu(DirectoryUtil.getRecipeFileNames(DirectoryUtil.RECIPES_PATH));
+        List<String> recipeNames = recipeService.getMenu(); // ПОЛУЧИТЬ МЕНЮ
 
         //ВЫБОР РЕЦЕПТА
 
-        Recipe recipe = recipeService.getRecipe(Recipe.class, "Шаурма"); // <-- Здесь текст нажатой кнопки
+        recipeService.loadRecipe("Шаурма"); // <-- Здесь текст нажатой кнопки
+        Recipe recipe = recipeService.getRecipe();
+
+        for (Stage stage : recipe.getStages()) {
+            List<Action> actionsInStage = recipeService.getAllActionsInStage(stage); // ПОЛУЧИТЬ ДЕЙСТВИЯ НА ОПРЕДЕЛЕННОМ ЭТАПЕ
+            System.out.println();
+        }
     }
 }

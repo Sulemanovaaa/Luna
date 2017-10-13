@@ -1,13 +1,14 @@
 package entity;
 
-import java.util.LinkedList;
+
+import java.util.List;
 
 public class Stage {
 
     private String name;
     private int time;
 
-    private LinkedList<Action> actions;
+    private List<Integer> actions;
 
     public Stage(String name, int time) {
         this.name = name;
@@ -28,5 +29,13 @@ public class Stage {
 
     public void setTime(int time) {
         this.time = time;
+    }
+
+    public List<Integer> getActions() {
+        return actions;
+    }
+
+    public void setActions(List<Integer> actions) {
+        this.actions = actions;
     }
 }
