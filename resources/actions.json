@@ -1,26 +1,24 @@
 {
-    "1":
-      {
-        "name": "Отвлечься",
-        "joy": "1",
-        "trust": "2",
-        "fear": "3",
-        "surprise": "4",
-        "sadness": "5",
-        "disgust": "6",
-        "anger": "7",
-        "anticipation": "8"
-      },
-    "2":
-      {
-        "name": "Покурить",
-        "joy": "1",
-        "trust": "2",
-        "fear": "3",
-        "surprise": "4",
-        "sadness": "5",
-        "disgust": "6",
-        "anger": "7",
-        "anticipation": "8"
-      }
+  "1": {
+    "name": "Отвлечься",
+    "joy": "1",
+    "trust": "2",
+    "fear": "3",
+    "surprise": "4",
+    "sadness": "5",
+    "disgust": "6",
+    "anger": "7",
+    "anticipation": "8"
+  },
+  "2": {
+    "name": "Покурить",
+    "joy": "1",
+    "trust": "2",
+    "fear": "3",
+    "surprise": "4",
+    "sadness": "5",
+    "disgust": "6",
+    "anger": "7",
+    "anticipation": "8"
+  }
 }

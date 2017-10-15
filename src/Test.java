@@ -1,17 +1,10 @@
 import entity.Action;
-import entity.Recipe;
-import entity.Stage;
+import entity.Step;
 import services.RecipeService;
-import utils.DirectoryUtil;
-import utils.JsonUtil;
 
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Test {
-
-    //recipeNames - список для текста кнопок
 
     public static void main(String[] args) {
 
@@ -29,10 +22,10 @@ public class Test {
         //ВЫБОР РЕЦЕПТА
 
         recipeService.loadRecipe("Шаурма"); // <-- Здесь текст нажатой кнопки
-        Recipe recipe = recipeService.getRecipe();
 
-        for (Stage stage : recipe.getStages()) {
-            List<Action> actionsInStage = recipeService.getAllActionsInStage(stage); // ПОЛУЧИТЬ ДЕЙСТВИЯ НА ОПРЕДЕЛЕННОМ ЭТАПЕ
+        for (Step step : recipeService.getAllStepsInRecipe()) { // ПОЛУЧИТЬ ШАГИ БЛЮДА (ЗАОДНО СЧИТАЕТСЯ ВРЕМЯ ПРИГОТОВЛЕНИЯ)
+            int cookingTime = recipeService.getCookingTime();
+            List<Action> actionsInStep = recipeService.getAllActionsInStep(step); // ПОЛУЧИТЬ ДЕЙСТВИЯ НА ОПРЕДЕЛЕННОМ ЭТАПЕ
             System.out.println();
         }
     }

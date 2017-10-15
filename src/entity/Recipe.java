@@ -1,13 +1,20 @@
 package entity;
 
-import java.util.List;
+import java.util.*;
 
 public class Recipe {
 
     private String name;
-    //private int time;
+    private int time;
 
-    private List<Stage> stages;
+    private Map<Integer, List<Integer>> stages;
+
+    /*
+        STAGES - СОВОКУПНОСТЬ ШАГОВ И ДЕЙСТВИЙ
+        STEPS - ШАГИ
+        ACTIONS - ДЕЙСТВИЯ
+        ПРЕДСТАВЛЯЙ ТАК - Map<Step, List<Action> stages
+     */
 
     public String getName() {
         return name;
@@ -16,7 +23,7 @@ public class Recipe {
     public void setName(String name) {
         this.name = name;
     }
-/*
+
     public int getTime() {
         return time;
     }
@@ -24,12 +31,20 @@ public class Recipe {
     public void setTime(int time) {
         this.time = time;
     }
-*/
-    public List<Stage> getStages() {
+
+    public Map<Integer, List<Integer>> getStages() {
         return stages;
     }
 
-    public void setStages(List<Stage> stages) {
+    public void setStages(Map<Integer, List<Integer>> stages) {
         this.stages = stages;
+    }
+
+    public List<Integer> getAllActionsInStep(int id) {
+        return new ArrayList<>(stages.get(id));
+    }
+
+    public List<Integer> getAllStepsInStages() {
+        return new ArrayList<>(stages.keySet());
     }
 }
