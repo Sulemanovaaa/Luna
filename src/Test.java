@@ -1,4 +1,5 @@
 import entity.Recipe;
+import entity.Stage;
 import services.RecipeService;
 import utils.DirectoryUtil;
 import utils.JsonUtil;
@@ -27,5 +28,8 @@ public class Test {
         //ВЫБОР РЕЦЕПТА
 
         Recipe recipe = recipeService.getRecipe(Recipe.class, "Шаурма"); // <-- Здесь текст нажатой кнопки
+        for (Stage stage: recipe.getStages()) {
+            System.out.println(stage.getName());
+        }
     }
 }

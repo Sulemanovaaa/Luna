@@ -16,4 +16,12 @@ public class Recipe {
     public void addStage(Stage stage) {
         stages.add(stage);
     }
+
+    public ArrayList<Stage> getStages() {
+        return stages;
+    }
+
+    public void setStages(ArrayList<Stage> stages) {
+        this.stages = stages;
+    }
 }
