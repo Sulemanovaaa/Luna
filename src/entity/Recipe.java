@@ -4,8 +4,10 @@ import java.util.*;
 
 public class Recipe {
 
+    private int id;
     private String name;
-    private int time;
+    private int cookingTime;
+    private String fileName;
 
     private Map<Integer, List<Integer>> stages;
 
@@ -13,8 +15,16 @@ public class Recipe {
         STAGES - СОВОКУПНОСТЬ ШАГОВ И ДЕЙСТВИЙ
         STEPS - ШАГИ
         ACTIONS - ДЕЙСТВИЯ
-        ПРЕДСТАВЛЯЙ ТАК - Map<Step, List<Action> stages
+        ПРЕДСТАВЛЯЙ ТАК - Map<Step, List<Action>> stages
      */
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -24,12 +34,20 @@ public class Recipe {
         this.name = name;
     }
 
-    public int getTime() {
-        return time;
+    public int getCookingTime() {
+        return cookingTime;
     }
 
-    public void setTime(int time) {
-        this.time = time;
+    public void setCookingTime(int cookingTime) {
+        this.cookingTime = cookingTime;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public Map<Integer, List<Integer>> getStages() {
@@ -40,11 +58,11 @@ public class Recipe {
         this.stages = stages;
     }
 
-    public List<Integer> getAllActionsInStep(int id) {
+    public List<Integer> getAllActionsIdInStep(int id) {
         return new ArrayList<>(stages.get(id));
     }
 
-    public List<Integer> getAllStepsInStages() {
+    public List<Integer> getAllStepsIdInStages() {
         return new ArrayList<>(stages.keySet());
     }
 }
