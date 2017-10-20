@@ -49,10 +49,10 @@ public class TelegramBot extends TelegramLongPollingBot {
                 sendMsg(message, "Чтобы увидеть меню напиши:");
                 sendMsg(message, "Сделать заказ");
             }
-            if (message.getText().equals("Сделать заказ")) {
+            else if (message.getText().equals("Сделать заказ")) {
                 showMenu(message);
             }
-            if (messageIsADish(message)) {
+            else if (messageIsADish(message)) {
                 sendMsg(message, "Начинаю готовить");
             }
             else
