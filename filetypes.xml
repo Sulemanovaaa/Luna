@@ -1,0 +1,10 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping ext="twig" type="HTML" />
+      <mapping ext="csv" type="PLAIN_TEXT" />
+      <mapping ext="dist" type="PLAIN_TEXT" />
+      <mapping pattern="context" type="XML" />
+    </extensionMap>
+  </component>
+</application>
