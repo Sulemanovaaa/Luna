@@ -1,16 +1,13 @@
+import entity.Action;
 import entity.Recipe;
-import entity.Stage;
+import entity.Step;
+import services.DataService;
+import services.MenuService;
 import services.RecipeService;
-import utils.DirectoryUtil;
-import utils.JsonUtil;
 
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Test {
-
-    //recipeNames - список для текста кнопок
 
     public static void main(String[] args) {
 
@@ -19,17 +16,30 @@ public class Test {
 
     private static void InitNewRecipe() {
 
-        RecipeService recipeService = new RecipeService(JsonUtil.jsonToObject(LinkedHashMap.class, DirectoryUtil.DICTIONARY_PATH));
+        DataService dataService = new DataService();
+        dataService.init();
+        dataService.loadData();
 
-        List<String> recipeNames = recipeService.getMenu(DirectoryUtil.getRecipeFileNames(DirectoryUtil.RECIPES_PATH));
+        MenuService menuService = new MenuService(dataService);
+        menuService.init();
+        menuService.loadMenu();
+        menuService.loadRecipes();
+        menuService.setCookingTime();
 
-        System.out.println(recipeNames.size());
+        List<Recipe> recipes = menuService.getMenu(); // ПОЛУЧИТЬ МЕНЮ (СПИСОК РЕЦЕПТОВ)
 
-        //ВЫБОР РЕЦЕПТА
+        // ЗДЕСЬ ПРОИСХОДИТ ВЫБОР РЕЦЕПТА С ВОЗВРАТОМ ID ВЫБРАННОГО РЕЦЕПТА:
+        // int id = ...
 
-        Recipe recipe = recipeService.getRecipe(Recipe.class, "Шаурма"); // <-- Здесь текст нажатой кнопки
-        for (Stage stage: recipe.getStages()) {
-            System.out.println(stage.getName());
+        RecipeService recipeService = new RecipeService(dataService, menuService);
+        recipeService.init();
+        recipeService.setRecipe(1); // ЗДЕСЬ ID, КОТОРЫЙ ПОЛУЧЕН ВЫШЕ
+        Recipe recipe = recipeService.getRecipe(); // ПОЛУЧИТЬ ВЫБРАННЫЙ РЕЦЕПТ
+
+        for (int stepId : recipeService.getAllStepsIdInRecipe()) { // ПОЛУЧИТЬ ШАГИ БЛЮДА
+            Step step = recipeService.getStepInRecipe(stepId); //ПОЛУЧИТЬ ШАГ
+            List<Action> actionsInStep = recipeService.getAllActionsInStep(stepId); // ПОЛУЧИТЬ ДЕЙСТВИЯ НА ШАГЕ
+            System.out.println(); //ДЛЯ ОТЛАДКИ
         }
     }
 }

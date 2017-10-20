@@ -1,35 +1,52 @@
 package services;
 
+import entity.Action;
 import entity.Recipe;
-import utils.DirectoryUtil;
-import utils.JsonUtil;
-import utils.MapUtil;
+import entity.Step;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class RecipeService {
 
-    Map<String, String> dictionary;
+    private Recipe recipe;
 
-    public RecipeService(Object dictionary) {
-        this.dictionary = (Map<String, String>) dictionary;
+    private DataService dataService;
+    private MenuService menuService;
+
+    public RecipeService(DataService dataService, MenuService menuService) {
+        this.dataService = dataService;
+        this.menuService = menuService;
     }
 
-    public List<String> getMenu(List<String> recipeFileNames) {
-        List<String> recipeNames = new LinkedList<>();
-        for (String recipeFileName : recipeFileNames) {
-            if (dictionary.containsKey(recipeFileName))
-                recipeNames.add(dictionary.get(recipeFileName));
-        }
-        return recipeNames;
+    public void init() {
+        recipe = new Recipe();
     }
 
-    public Recipe getRecipe(Class recipe, String recipeName) {
-        if (dictionary != null && dictionary.containsValue(recipeName)) {
-            return (Recipe) JsonUtil.jsonToObject(recipe, DirectoryUtil.RECIPES_PATH + MapUtil.getKeyByValue(dictionary, recipeName)); //BAD SOLUTION
+    public void setRecipe(int id) {
+        recipe = menuService.getRecipeInMenuById(id);
+    }
+
+    public Recipe getRecipe() {
+        return recipe;
+    }
+
+    //recipe = (Recipe) JsonUtil.jsonToObject(recipe.getClass(), DirectoryUtil.RECIPES_PATH + MapUtil.getKeyByValue(dictionary, recipeName)); // BAD SOLUTION
+
+    public Step getStepInRecipe(int stepId) {
+        return dataService.getSteps().get(stepId);
+    }
+
+    public List<Integer> getAllStepsIdInRecipe() {
+        if (recipe != null) {
+            return recipe.getAllStepsIdInStages();
         }
         return null;
+    }
+
+    public List<Action> getAllActionsInStep(int stepId) {
+        List<Action> actionsInStep = new ArrayList<>();
+        for (Integer actionId : recipe.getAllActionsIdInStep(stepId))
+            actionsInStep.add(dataService.getActions().get(actionId));
+        return actionsInStep;
     }
 }

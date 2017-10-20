@@ -1,61 +1,18 @@
 {
-  "name" : "Шаурма",
-  "stages": [
-    {
-      "name": "First Stage",
-      "time": 10,
-      "actions": [
-        {
-          "name": "First Action",
-          "amazement": 10,
-          "disgust": 11,
-          "confidence": 12,
-          "angry": 13,
-          "alertness": 14,
-          "fear": 15,
-          "happiness": 16,
-          "sadness": 17
-        },
-        {
-          "name": "Second Action",
-          "amazement": 20,
-          "disgust": 21,
-          "confidence": 22,
-          "angry": 23,
-          "alertness": 24,
-          "fear": 25,
-          "happiness": 26,
-          "sadness": 27
-        }
-      ]
-    },
-    {
-      "name": "Second Stage",
-      "time": 10,
-      "actions": [
-        {
-          "name": "First Action",
-          "amazement": 30,
-          "disgust": 31,
-          "confidence": 32,
-          "angry": 33,
-          "alertness": 34,
-          "fear": 35,
-          "happiness": 36,
-          "sadness": 37
-        },
-        {
-          "name": "Second Action",
-          "amazement": 40,
-          "disgust": 41,
-          "confidence": 42,
-          "angry": 43,
-          "alertness": 44,
-          "fear": 45,
-          "happiness": 46,
-          "sadness": 47
-        }
-      ]
-    }
-  ]
+	"2": [
+		1,
+		2,
+		3,
+		4,
+		5,
+		6
+	],
+	"1": [
+		5,
+		4,
+		6,
+		2,
+		1,
+		3
+	]
 }
