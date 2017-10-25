@@ -13,6 +13,9 @@ public class RecipeService {
     private StorageService storageService;
     private MenuService menuService;
 
+    private Iterator iterator;
+    private Map.Entry currentPair;
+
     public RecipeService(StorageService storageService, MenuService menuService) {
         this.storageService = storageService;
         this.menuService = menuService;
@@ -24,6 +27,10 @@ public class RecipeService {
 
     public void setRecipe(int id) {
         recipe = menuService.getRecipeInMenuById(id);
+    }
+
+    public void initIterator() {
+        iterator = recipe.getStages().entrySet().iterator();
     }
 
     public Recipe getRecipe() {
@@ -46,5 +53,18 @@ public class RecipeService {
         for (Integer actionId : recipe.getAllActionsIdInStep(stepId))
             actionsInStep.add(storageService.getActions().get(actionId));
         return actionsInStep;
+    }
+
+
+    public Step getStepInRecipeViaIterator() {
+        if (iterator.hasNext()) {
+            currentPair = (Map.Entry) iterator.next();
+            return getStepInRecipe((Integer) currentPair.getKey());
+        }
+        return null;
+    }
+
+    public List<Action> getAllActionsInStepViaIterator() {
+        return getAllActionsInStep((Integer) currentPair.getKey());
     }
 }
