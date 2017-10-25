@@ -10,7 +10,7 @@ import utils.JsonUtil;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DataService {
+public class StorageService {
 
     private Map<Integer, Step> steps;
     private Map<Integer, Action> actions;
