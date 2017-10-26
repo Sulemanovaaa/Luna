@@ -13,10 +13,10 @@ public class MenuService {
 
     private List<Recipe> menu;
 
-    private DataService dataService;
+    private StorageService storageService;
 
-    public MenuService(DataService dataService) {
-        this.dataService = dataService;
+    public MenuService(StorageService storageService) {
+        this.storageService = storageService;
     }
 
     public void init() {
@@ -25,7 +25,8 @@ public class MenuService {
 
     public void loadMenu() {
         if (menu != null) {
-            menu = JsonUtil.loadGenericList(new TypeToken<List<Recipe>>(){}.getType(), DirectoryUtil.DICTIONARY_PATH);
+            menu = JsonUtil.loadGenericList(new TypeToken<List<Recipe>>() {
+            }.getType(), DirectoryUtil.DICTIONARY_PATH);
             menu = DirectoryUtil.getExistingRecipes(this.menu, DirectoryUtil.RECIPES_PATH);
         }
     }
@@ -42,20 +43,15 @@ public class MenuService {
     }
 
     public boolean setCookingTime() {
-        try {
-            if (menu.get(0).getStages() != null) {
-                for (Recipe recipe : menu) {
-                    int cookingTime = 0;
-                    for (int stepId : recipe.getAllStepsIdInStages()) {
-                        cookingTime += dataService.getStepById(stepId).getTime();
-                    }
-                    recipe.setCookingTime(cookingTime);
+        if (menu.get(0).getStages() != null) {
+            for (Recipe recipe : menu) {
+                int cookingTime = 0;
+                for (int stepId : recipe.getAllStepsIdInStages()) {
+                    cookingTime += storageService.getStepById(stepId).getTime();
                 }
-                return true;
+                recipe.setCookingTime(cookingTime);
             }
-        }
-        catch (Exception ex) {
-            ex.getMessage();
+            return true;
         }
         return false;
     }

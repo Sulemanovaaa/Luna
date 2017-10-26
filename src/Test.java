@@ -1,7 +1,7 @@
 import entity.Action;
 import entity.Recipe;
 import entity.Step;
-import services.DataService;
+import services.StorageService;
 import services.MenuService;
 import services.RecipeService;
 
@@ -16,11 +16,11 @@ public class Test {
 
     private static void InitNewRecipe() {
 
-        DataService dataService = new DataService();
-        dataService.init();
-        dataService.loadData();
+        StorageService storageService = new StorageService();
+        storageService.init();
+        storageService.loadData();
 
-        MenuService menuService = new MenuService(dataService);
+        MenuService menuService = new MenuService(storageService);
         menuService.init();
         menuService.loadMenu();
         menuService.loadRecipes();
@@ -31,11 +31,20 @@ public class Test {
         // ЗДЕСЬ ПРОИСХОДИТ ВЫБОР РЕЦЕПТА С ВОЗВРАТОМ ID ВЫБРАННОГО РЕЦЕПТА:
         // int id = ...
 
-        RecipeService recipeService = new RecipeService(dataService, menuService);
+        RecipeService recipeService = new RecipeService(storageService, menuService);
         recipeService.init();
         recipeService.setRecipe(1); // ЗДЕСЬ ID, КОТОРЫЙ ПОЛУЧЕН ВЫШЕ
+        recipeService.initIterator();
         Recipe recipe = recipeService.getRecipe(); // ПОЛУЧИТЬ ВЫБРАННЫЙ РЕЦЕПТ
 
+        // 1 ВАРИАНТ ПОЛУЧЕНИЯ РЕЦЕПТА И ЕГО ДАННЫХ
+        Step step1 = recipeService.getStepInRecipeViaIterator();
+        List<Action> actions1 = recipeService.getAllActionsInStepViaIterator();
+        Step step2 = recipeService.getStepInRecipeViaIterator();
+        List<Action> actions2 = recipeService.getAllActionsInStepViaIterator();
+        // И Т.Д.
+
+        // 2 ВАРИАНТ ПОЛУЧЕНИЯ РЕЦЕПТА И ЕГО ДАННЫХ
         for (int stepId : recipeService.getAllStepsIdInRecipe()) { // ПОЛУЧИТЬ ШАГИ БЛЮДА
             Step step = recipeService.getStepInRecipe(stepId); //ПОЛУЧИТЬ ШАГ
             List<Action> actionsInStep = recipeService.getAllActionsInStep(stepId); // ПОЛУЧИТЬ ДЕЙСТВИЯ НА ШАГЕ

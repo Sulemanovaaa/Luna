@@ -15,7 +15,7 @@ public class Recipe {
         STAGES - СОВОКУПНОСТЬ ШАГОВ И ДЕЙСТВИЙ
         STEPS - ШАГИ
         ACTIONS - ДЕЙСТВИЯ
-        ПРЕДСТАВЛЯЙ ТАК - Map<Step, List<Action>> stages
+        ПРЕДСТАВЛЯЕМ ТАК - Map<Step, List<Action>> stages
      */
 
     public int getId() {
