@@ -1,25 +1,26 @@
 import com.sun.org.apache.regexp.internal.RE;
-import services.DataService;
+import services.StorageService;
 import services.MenuService;
 import services.RecipeService;
+import services.StorageService;
 
 import javax.xml.crypto.Data;
 
 public class DataInitializer {
-    private DataService dataService;
+    private StorageService storageService;
     private MenuService menuService;
 
 
-    public DataService initDataService() {
-        DataService dataService = new DataService();
-        dataService.init();
-        dataService.loadData();
-        this.dataService = dataService;
-        return dataService;
+    public StorageService initDataService() {
+        storageService = new StorageService();
+        storageService.init();
+        storageService.loadData();
+        this.storageService = storageService;
+        return storageService;
     }
 
     public MenuService initMenuService() {
-        MenuService menuService = new MenuService(dataService);
+        MenuService menuService = new MenuService(storageService);
         menuService.init();
         menuService.loadMenu();
         menuService.loadRecipes();
@@ -29,7 +30,7 @@ public class DataInitializer {
     }
 
     public RecipeService initRecipeService() {
-        RecipeService recipeService = new RecipeService(dataService, menuService);
+        RecipeService recipeService = new RecipeService(storageService, menuService);
         recipeService.init();
         return recipeService;
     }
