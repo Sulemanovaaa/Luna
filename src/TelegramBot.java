@@ -1,3 +1,5 @@
+import com.sun.org.apache.regexp.internal.RE;
+import entity.Recipe;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
@@ -7,20 +9,32 @@ import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import services.DataService;
+import services.MenuService;
 import services.RecipeService;
-import utils.DirectoryUtil;
-import utils.JsonUtil;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TelegramBot extends TelegramLongPollingBot {
 
-    private RecipeService recipeService = new RecipeService(JsonUtil.jsonToObject(LinkedHashMap.class, DirectoryUtil.DICTIONARY_PATH));
-    private List<String> recipeNames = recipeService.getMenu(DirectoryUtil.getRecipeFileNames(DirectoryUtil.RECIPES_PATH));
+   private static MenuService menuService;
+   private static DataService dataService;
+   private static RecipeService recipeService;
+   private static DataInitializer dataInitializer = new DataInitializer();
 
-    public static void main(String[] args) {
+   private List<Recipe> recipes;
+   private boolean hasOrder = false;
+   private Recipe currentDish;
+
+   private static void init(){
+       dataService = dataInitializer.initDataService();
+       menuService = dataInitializer.initMenuService();
+       recipeService = dataInitializer.initRecipeService();
+   }
+
+    public static void main(String args[]) {
         ApiContextInitializer.init();
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi();
         try {
@@ -28,6 +42,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+        init();
     }
 
     @Override
@@ -51,18 +66,26 @@ public class TelegramBot extends TelegramLongPollingBot {
             }
             else if (message.getText().equals("Сделать заказ")) {
                 showMenu(message);
+                hasOrder = true;
             }
-            else if (messageIsADish(message)) {
+            else if (hasOrder && messageIsADish(message)) {
                 sendMsg(message, "Начинаю готовить");
+                startCooking(message);
             }
             else
                 sendMsg(message, "Я не знаю что ответить на это");
         }
     }
 
+    private void startCooking(Message message) {
+        Map<Integer ,List<Integer>> stages = currentDish.getStages();
+
+    }
+
     private boolean messageIsADish(Message message) {
-        for (String recipe: recipeNames) {
-            if (message.getText().equals(recipe)) {
+        for (Recipe recipe: recipes) {
+            if (message.getText().startsWith(recipe.getName())) {
+                currentDish = recipe;
                 return true;
             }
         }
@@ -70,6 +93,8 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     private void showMenu(Message message) {
+
+        recipes = menuService.getMenu();
 
         SendMessage sendMessage = new SendMessage()
                 .setChatId(message.getChatId())
@@ -80,9 +105,9 @@ public class TelegramBot extends TelegramLongPollingBot {
         // Create the keyboard (list of keyboard rows)
         List<KeyboardRow> keyboard = new ArrayList<>();
 
-        for (String recipe: recipeNames) {
+        for (Recipe recipe: recipes) {
             KeyboardRow row = new KeyboardRow();
-            row.add(recipe);
+            row.add(recipe.getName() + " " + recipe.getCookingTime() + "с.");
             keyboard.add(row);
         }
 
