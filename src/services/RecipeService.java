@@ -1,9 +1,6 @@
 package services;
 
-import entity.Action;
-import entity.Recipe;
-import entity.Step;
-
+import entity.*;
 import java.util.*;
 
 public class RecipeService {
@@ -14,7 +11,8 @@ public class RecipeService {
     private MenuService menuService;
 
     private Iterator iterator;
-    private Map.Entry currentPair;
+    private Map.Entry iteratorPair;
+
 
     public RecipeService(StorageService storageService, MenuService menuService) {
         this.storageService = storageService;
@@ -58,13 +56,13 @@ public class RecipeService {
 
     public Step getStepInRecipeViaIterator() {
         if (iterator.hasNext()) {
-            currentPair = (Map.Entry) iterator.next();
-            return getStepInRecipe((Integer) currentPair.getKey());
+            iteratorPair = (Map.Entry) iterator.next();
+            return getStepInRecipe((Integer) iteratorPair.getKey());
         }
         return null;
     }
 
     public List<Action> getAllActionsInStepViaIterator() {
-        return getAllActionsInStep((Integer) currentPair.getKey());
+        return getAllActionsInStep((Integer) iteratorPair.getKey());
     }
 }

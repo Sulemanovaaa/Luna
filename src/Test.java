@@ -1,9 +1,5 @@
-import entity.Action;
-import entity.Recipe;
-import entity.Step;
-import services.StorageService;
-import services.MenuService;
-import services.RecipeService;
+import entity.*;
+import services.*;
 
 import java.util.List;
 
@@ -17,14 +13,18 @@ public class Test {
     private static void InitNewRecipe() {
 
         StorageService storageService = new StorageService();
-        storageService.init();
-        storageService.loadData();
+        storageService.start();
 
         MenuService menuService = new MenuService(storageService);
-        menuService.init();
-        menuService.loadMenu();
-        menuService.loadRecipes();
-        menuService.setCookingTime();
+        menuService.start();
+
+        DishService dishService = new DishService();
+        dishService.start();
+
+        CookService cookService = new CookService(storageService, dishService);
+        cookService.start();
+
+
 
         List<Recipe> recipes = menuService.getMenu(); // ПОЛУЧИТЬ МЕНЮ (СПИСОК РЕЦЕПТОВ)
 
@@ -37,6 +37,7 @@ public class Test {
         recipeService.initIterator();
         Recipe recipe = recipeService.getRecipe(); // ПОЛУЧИТЬ ВЫБРАННЫЙ РЕЦЕПТ
 
+
         // 1 ВАРИАНТ ПОЛУЧЕНИЯ РЕЦЕПТА И ЕГО ДАННЫХ
         Step step1 = recipeService.getStepInRecipeViaIterator();
         List<Action> actions1 = recipeService.getAllActionsInStepViaIterator();
@@ -48,6 +49,8 @@ public class Test {
         for (int stepId : recipeService.getAllStepsIdInRecipe()) { // ПОЛУЧИТЬ ШАГИ БЛЮДА
             Step step = recipeService.getStepInRecipe(stepId); //ПОЛУЧИТЬ ШАГ
             List<Action> actionsInStep = recipeService.getAllActionsInStep(stepId); // ПОЛУЧИТЬ ДЕЙСТВИЯ НА ШАГЕ
+            cookService.checkReactions(); // ПРОВЕРЯЕМ ЭМОЦИИ ПОВАРА ПОСЛЕ КАЖДОГО ДЕЙСТВИЯ
+            cookService.changeCookProperties(actionsInStep.get(1).getEffect()); // ИЗМЕНЕНИЕ ЭМОЦИЙ ПОСЛЕ ДЕЙСТВИЯ
             System.out.println(); //ДЛЯ ОТЛАДКИ
         }
     }

@@ -3,7 +3,8 @@ package entity;
 public class Reaction {
 
     private String name;
-    private EmotionProperties conditions;
+    private String emotionName;
+    private int emotionCriticalBorder;
     private FoodProperties effect;
 
     public String getName() {
@@ -14,12 +15,20 @@ public class Reaction {
         this.name = name;
     }
 
-    public EmotionProperties getConditions() {
-        return conditions;
+    public String getEmotionName() {
+        return emotionName;
     }
 
-    public void setConditions(EmotionProperties conditions) {
-        this.conditions = conditions;
+    public void setEmotionName(String emotionName) {
+        this.emotionName = emotionName;
+    }
+
+    public int getEmotionCriticalBorder() {
+        return emotionCriticalBorder;
+    }
+
+    public void setEmotionCriticalBorder(int emotionCriticalBorder) {
+        this.emotionCriticalBorder = emotionCriticalBorder;
     }
 
     public FoodProperties getEffect() {
