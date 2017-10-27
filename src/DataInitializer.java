@@ -15,17 +15,15 @@ public class DataInitializer {
         storageService = new StorageService();
         storageService.init();
         storageService.loadData();
-        this.storageService = storageService;
         return storageService;
     }
 
     public MenuService initMenuService() {
-        MenuService menuService = new MenuService(storageService);
+        menuService = new MenuService(storageService);
         menuService.init();
         menuService.loadMenu();
         menuService.loadRecipes();
         menuService.setCookingTime();
-        this.menuService = menuService;
         return menuService;
     }
 
