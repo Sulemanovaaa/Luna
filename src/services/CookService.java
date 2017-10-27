@@ -45,16 +45,14 @@ public class CookService {
         }
     }
 
-    public void changeCookProperties(EmotionProperties effect) {
-        for (Field field : cook.getEmotionProperties().getClass().getDeclaredFields())
-            ReflectionUtil.setFieldValueByNameAsInt(field.getName(), cook.getEmotionProperties(), ReflectionUtil.getFieldByNameAsInt(effect, field.getName()));
+    public void changeCookProperties(List<Action> actions) {
+        for (Action action : actions)
+            changeCookProperty(action.getEffect());
     }
 
 
 
-
-
-    public List<Integer> checkCriticalBorders(Map<Integer, Reaction> reactions) {
+    private List<Integer> checkCriticalBorders(Map<Integer, Reaction> reactions) {
         List<Integer> reactionsId = new ArrayList<>();
         for (Map.Entry<Integer, Reaction> pair : reactions.entrySet()) {
             for (Field field : pair.getValue().getClass().getDeclaredFields()) {
@@ -72,7 +70,7 @@ public class CookService {
         return reactionsId;
     }
 
-    public void changeDishProperties(List<Reaction> reactions) {
+    private void changeDishProperties(List<Reaction> reactions) {
         for (Reaction reaction : reactions) {
             Field effectField = ReflectionUtil.getFieldByName(reaction, FOOD_EFFECT_PROPERTY_NAME);
             FoodProperties reactionEffect = ReflectionUtil.getFieldValueAsFoodProperties(reaction, effectField);
@@ -88,6 +86,11 @@ public class CookService {
         int cookEmotionProperties = ReflectionUtil.getFieldByNameAsInt(obj1, fieldName);
         int criticalBorder = ReflectionUtil.getFieldByNameAsInt(obj2, EMOTION_CRITICAL_BORDER_PROPERTY);
         return cookEmotionProperties >= criticalBorder;
+    }
+
+    private void changeCookProperty(EmotionProperties effect) {
+        for (Field field : cook.getEmotionProperties().getClass().getDeclaredFields())
+            ReflectionUtil.setFieldValueByNameAsInt(field.getName(), cook.getEmotionProperties(), ReflectionUtil.getFieldByNameAsInt(effect, field.getName()));
     }
 
 
