@@ -54,12 +54,13 @@ public class RecipeService {
     }
 
 
-    public Step getStepInRecipeViaIterator() {
-        if (iterator.hasNext()) {
+    public void iteratorNext() {
+        if (iterator.hasNext())
             iteratorPair = (Map.Entry) iterator.next();
-            return getStepInRecipe((Integer) iteratorPair.getKey());
-        }
-        return null;
+    }
+
+    public Step getCurrentStepInRecipe() {
+        return getStepInRecipe((Integer) iteratorPair.getKey());
     }
 
     public List<Action> getAllActionsInCurrentStep() {
