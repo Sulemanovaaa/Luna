@@ -32,6 +32,7 @@ public class ReflectionUtil {
 
     public static String getFieldValueAsString(Object obj, Field field) {
         try {
+            field.setAccessible(true);
             return (String) field.get(obj);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -39,7 +40,17 @@ public class ReflectionUtil {
         return null;
     }
 
-    public static int getFieldByNameAsInt(Object obj, String fieldName) {
+    public static int getFieldValueAsInt(Object obj, Field field) {
+        try {
+            field.setAccessible(true);
+            return (int) field.get(obj);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    public static int getFieldValueByNameAsInt(Object obj, String fieldName) {
         try {
             Field field = getFieldByName(obj, fieldName);
             if (field != null) {

@@ -39,9 +39,11 @@ public class Test {
 
 
         // 1 ВАРИАНТ ПОЛУЧЕНИЯ РЕЦЕПТА И ЕГО ДАННЫХ
-        Step step1 = recipeService.getStepInRecipeViaIterator();
+        recipeService.iteratorNext();
+        Step step1 = recipeService.getCurrentStepInRecipe();
         List<Action> actions1 = recipeService.getAllActionsInCurrentStep();
-        Step step2 = recipeService.getStepInRecipeViaIterator();
+        recipeService.iteratorNext();
+        Step step2 = recipeService.getCurrentStepInRecipe();
         List<Action> actions2 = recipeService.getAllActionsInCurrentStep();
         // И Т.Д.
 
