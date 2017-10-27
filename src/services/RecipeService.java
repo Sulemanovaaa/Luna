@@ -62,7 +62,7 @@ public class RecipeService {
         return null;
     }
 
-    public List<Action> getAllActionsInStepViaIterator() {
+    public List<Action> getAllActionsInCurrentStep() {
         return getAllActionsInStep((Integer) iteratorPair.getKey());
     }
 }

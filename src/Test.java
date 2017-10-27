@@ -40,9 +40,9 @@ public class Test {
 
         // 1 ВАРИАНТ ПОЛУЧЕНИЯ РЕЦЕПТА И ЕГО ДАННЫХ
         Step step1 = recipeService.getStepInRecipeViaIterator();
-        List<Action> actions1 = recipeService.getAllActionsInStepViaIterator();
+        List<Action> actions1 = recipeService.getAllActionsInCurrentStep();
         Step step2 = recipeService.getStepInRecipeViaIterator();
-        List<Action> actions2 = recipeService.getAllActionsInStepViaIterator();
+        List<Action> actions2 = recipeService.getAllActionsInCurrentStep();
         // И Т.Д.
 
         // 2 ВАРИАНТ ПОЛУЧЕНИЯ РЕЦЕПТА И ЕГО ДАННЫХ
@@ -50,7 +50,7 @@ public class Test {
             Step step = recipeService.getStepInRecipe(stepId); //ПОЛУЧИТЬ ШАГ
             List<Action> actionsInStep = recipeService.getAllActionsInStep(stepId); // ПОЛУЧИТЬ ДЕЙСТВИЯ НА ШАГЕ
             cookService.checkReactions(); // ПРОВЕРЯЕМ ЭМОЦИИ ПОВАРА ПОСЛЕ КАЖДОГО ДЕЙСТВИЯ
-            cookService.changeCookProperties(actionsInStep.get(1).getEffect()); // ИЗМЕНЕНИЕ ЭМОЦИЙ ПОСЛЕ ДЕЙСТВИЯ
+            cookService.changeCookProperties(actionsInStep); // ИЗМЕНЕНИЕ ЭМОЦИЙ ПОСЛЕ ДЕЙСТВИЯ
             System.out.println(); //ДЛЯ ОТЛАДКИ
         }
     }
