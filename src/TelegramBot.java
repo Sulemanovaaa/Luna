@@ -1,5 +1,8 @@
 import com.sun.org.apache.regexp.internal.RE;
+import entity.Action;
+import entity.Cook;
 import entity.Recipe;
+import entity.Step;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
@@ -13,9 +16,7 @@ import services.StorageService;
 import services.MenuService;
 import services.RecipeService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TelegramBot extends TelegramLongPollingBot {
 
@@ -23,8 +24,9 @@ public class TelegramBot extends TelegramLongPollingBot {
     private static StorageService dataService;
     private static RecipeService recipeService;
     private static DataInitializer dataInitializer = new DataInitializer();
+    private Cook cook;
 
-    private List<Recipe> recipes;
+    //private List<Recipe> recipes;
     private boolean hasOrder = false;
     private Recipe currentDish;
 
@@ -78,36 +80,41 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     private void startCooking(Message message) {
-        Map<Integer ,List<Integer>> stages = currentDish.getStages();
 
-    }
-
-    private boolean messageIsADish(Message message) {
-        for (Recipe recipe: recipes) {
-            if (message.getText().startsWith(recipe.getName())) {
-                currentDish = recipe;
-                return true;
-            }
+        //show steps by timer
+        List<Action> actions = recipeService.getAllActionsInStepViaIterator();
+        List<String> actionButtons = new ArrayList<>();
+        for (Action action: actions) {
+            actionButtons.add(action.getName());
         }
-        return false;
+
+        showButtons(actionButtons, "Хотите вмешаться в работу повара?", message);
+
+        /*TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                sendMsg(message, "text after 10 sec");
+            }
+        };
+
+        Timer timer = new Timer();
+        timer.schedule(timerTask, 10000);*/
+
+
+
     }
 
-    private void showMenu(Message message) {
-
-        recipes = menuService.getMenu();
-
+    private void showButtons(List<String> buttonsName, String textWithMessage, Message message) {
         SendMessage sendMessage = new SendMessage()
                 .setChatId(message.getChatId())
-                .setText("Вот что мы можем вам предложить");
+                .setText(textWithMessage);
 
-        // Create ReplyKeyboardMarkup object
         ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
-        // Create the keyboard (list of keyboard rows)
         List<KeyboardRow> keyboard = new ArrayList<>();
 
-        for (Recipe recipe: recipes) {
+        for (String button: buttonsName) {
             KeyboardRow row = new KeyboardRow();
-            row.add(recipe.getName() + " " + recipe.getCookingTime() + "с.");
+            row.add(button);
             keyboard.add(row);
         }
 
@@ -122,6 +129,37 @@ public class TelegramBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+    }
+
+    private boolean messageIsADish(Message message) {
+        for (Recipe recipe: menuService.getMenu()) {
+            if (message.getText().startsWith(recipe.getName())) {
+                recipeService.setRecipe(recipe.getId());
+                recipeService.initIterator();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean messageIsAction(Message message) {
+        for (Action action: recipeService.getAllActionsInStepViaIterator()) {
+            if (message.getText().startsWith(action.getName())) {
+                Action currentAction = action;
+                // Применить action
+                // getInfoAboutCook() for testing
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void showMenu(Message message) {
+        List<String> buttonsName = new  ArrayList<>();
+        for (Recipe recipe: menuService.getMenu()) {
+            buttonsName.add(recipe.getName() + " " + recipe.getCookingTime() + "c");
+        }
+        showButtons(buttonsName, "Вот что мы можем вам предложить", message);
     }
 
     private void sendMsg(Message message, String text) {

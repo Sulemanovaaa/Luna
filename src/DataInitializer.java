@@ -13,23 +13,20 @@ public class DataInitializer {
 
     public StorageService initDataService() {
         storageService = new StorageService();
-        storageService.init();
-        storageService.loadData();
+        storageService.start();
         return storageService;
     }
 
     public MenuService initMenuService() {
         menuService = new MenuService(storageService);
-        menuService.init();
-        menuService.loadMenu();
-        menuService.loadRecipes();
-        menuService.setCookingTime();
+        menuService.start();
         return menuService;
     }
 
     public RecipeService initRecipeService() {
         RecipeService recipeService = new RecipeService(storageService, menuService);
         recipeService.init();
+
         return recipeService;
     }
 
