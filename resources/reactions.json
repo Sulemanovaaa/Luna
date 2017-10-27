@@ -1,20 +1,18 @@
 {
     "1": {
         "name": "Бросаю готовку",
-        "conditions" : {
-
-        },
+        "emotionName" : "anger",
+        "emotionCriticalBorder" : 100,
         "effect": {
-
+            "quality" : -100
         }
     },
     "2": {
         "name": "Мне нужно передохнуть",
-        "conditions" : {
-
-        },
+        "emotionName" : "fear",
+        "emotionCriticalBorder" : 100,
         "effect": {
-
+            "quality" : -20
         }
     }
 }

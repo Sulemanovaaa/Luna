@@ -19,6 +19,13 @@ public class MenuService {
         this.storageService = storageService;
     }
 
+    public void start() {
+        init();
+        loadMenu();
+        loadRecipes();
+        setCookingTime();
+    }
+
     public void init() {
         menu = new ArrayList<>();
     }
