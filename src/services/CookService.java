@@ -45,10 +45,12 @@ public class CookService {
         }
     }
 
-    public void changeCookProperties(List<Action> actions) {
-        for (Action action : actions)
-            changeCookProperty(action.getEffect());
+    public void changeCookProperties(Action action) {
+        for (Field field : cook.getEmotionProperties().getClass().getDeclaredFields())
+            ReflectionUtil.setFieldValueByNameAsInt(field.getName(), cook.getEmotionProperties(), ReflectionUtil.getFieldByNameAsInt(action.getEffect(), field.getName()));
     }
+
+
 
 
 
@@ -86,11 +88,6 @@ public class CookService {
         int cookEmotionProperties = ReflectionUtil.getFieldByNameAsInt(obj1, fieldName);
         int criticalBorder = ReflectionUtil.getFieldByNameAsInt(obj2, EMOTION_CRITICAL_BORDER_PROPERTY);
         return cookEmotionProperties >= criticalBorder;
-    }
-
-    private void changeCookProperty(EmotionProperties effect) {
-        for (Field field : cook.getEmotionProperties().getClass().getDeclaredFields())
-            ReflectionUtil.setFieldValueByNameAsInt(field.getName(), cook.getEmotionProperties(), ReflectionUtil.getFieldByNameAsInt(effect, field.getName()));
     }
 
 

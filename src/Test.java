@@ -50,7 +50,7 @@ public class Test {
             Step step = recipeService.getStepInRecipe(stepId); //ПОЛУЧИТЬ ШАГ
             List<Action> actionsInStep = recipeService.getAllActionsInStep(stepId); // ПОЛУЧИТЬ ДЕЙСТВИЯ НА ШАГЕ
             cookService.checkReactions(); // ПРОВЕРЯЕМ ЭМОЦИИ ПОВАРА ПОСЛЕ КАЖДОГО ДЕЙСТВИЯ
-            cookService.changeCookProperties(actionsInStep); // ИЗМЕНЕНИЕ ЭМОЦИЙ ПОСЛЕ ДЕЙСТВИЯ
+            cookService.changeCookProperties(actionsInStep.get(1)); // ИЗМЕНЕНИЕ ЭМОЦИЙ ПОСЛЕ ДЕЙСТВИЯ
             System.out.println(); //ДЛЯ ОТЛАДКИ
         }
     }
