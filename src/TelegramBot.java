@@ -80,35 +80,33 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private void startCooking(Message message) {
 
-        //Получение независимого степа
-        
-        showStepAndHisAction(message);
+            if (recipeService.iteratorNext()) {
+                Step step = recipeService.getCurrentStepInRecipe();
+                showStepAndHisAction(message, step);
 
-        //show steps by timer
-        TimerTask timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                recipeService.getStepInRecipeViaIterator();
-                showStepAndHisAction(message);
+                //show steps by timer
+                TimerTask timerTask = new TimerTask() {
+                    @Override
+                    public void run() {
+                        startCooking(message);
+                    }
+                };
+
+                Timer timer = new Timer();
+                timer.schedule(timerTask, step.getTime() * 1000);
             }
-        };
-
-        Timer timer = new Timer();
-        //Изенить на время степа
-        timer.schedule(timerTask, 10000);
-
-
 
     }
 
-    private void showStepAndHisAction(Message message) {
+
+    private void showStepAndHisAction(Message message, Step step) {
         List<Action> actions = recipeService.getAllActionsInCurrentStep();
         List<String> actionButtons = new ArrayList<>();
         for (Action action: actions) {
             actionButtons.add(action.getName());
         }
 
-        showButtons(actionButtons, "Хотите вмешаться в работу повара?", message);
+        showButtons(actionButtons, step.getName(), message);
     }
 
     private void showButtons(List<String> buttonsName, String textWithMessage, Message message) {
