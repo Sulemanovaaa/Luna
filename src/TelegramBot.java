@@ -1,8 +1,5 @@
 import com.sun.org.apache.regexp.internal.RE;
-import entity.Action;
-import entity.Cook;
-import entity.Recipe;
-import entity.Step;
+import entity.*;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
@@ -24,6 +21,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     private static DishService dishService;
     private static CookService cookService;
     private static DataInitializer dataInitializer = new DataInitializer();
+    private static Cook cook;
 
     private boolean hasOrder = false;
 
@@ -33,6 +31,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         dishService = dataInitializer.initDishService();
         cookService = dataInitializer.initCookService();
         recipeService = dataInitializer.initRecipeService();
+        cook = cookService.getCook();
     }
 
     public static void main(String args[]) {
@@ -65,12 +64,16 @@ public class TelegramBot extends TelegramLongPollingBot {
                 sendMsg(message, "Чтобы увидеть меню напиши:");
                 sendMsg(message, "Сделать заказ");
             }
-            else if (message.getText().equals("Сделать заказ")) {
+            else if (cook.getState().equals(CookStates.FREE) &&  message.getText().equals("Сделать заказ")) {
                 showMenu(message);
-                hasOrder = true;
+                cook.setState(CookStates.HAS_ORDER);
             }
-            else if (hasOrder && messageIsADish(message)) {
+            else if (cook.getState().equals(CookStates.COOKING) && messageIsAction(message)) {
+                //то применяется экшн к повару
+            }
+            else if (cook.getState().equals(CookStates.HAS_ORDER) && messageIsADish(message)) {
                 sendMsg(message, "Начинаю готовить");
+                cook.setState(CookStates.COOKING);
                 startCooking(message);
             }
             else
@@ -94,6 +97,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 
                 Timer timer = new Timer();
                 timer.schedule(timerTask, step.getTime() * 1000);
+            } else {
+                cook.setState(CookStates.FREE);
             }
 
     }
@@ -150,13 +155,21 @@ public class TelegramBot extends TelegramLongPollingBot {
     private boolean messageIsAction(Message message) {
         for (Action action: recipeService.getAllActionsInCurrentStep()) {
             if (message.getText().startsWith(action.getName())) {
-                // Применить action
-                //cookService.changeCookProperties(action);
-                // getInfoAboutCook() for testing
+                applyActionOnCook(message, action);
                 return true;
             }
         }
         return false;
+    }
+
+    private void applyActionOnCook(Message message, Action action) {
+        getCookInfo(message);
+        cookService.changeCookProperties(action);
+        getCookInfo(message);
+    }
+
+    private void getCookInfo(Message message) {
+        sendMsg(message,cookService.getCook().toString());
     }
 
     private void showMenu(Message message) {

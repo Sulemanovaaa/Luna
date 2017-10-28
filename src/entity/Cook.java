@@ -14,6 +14,14 @@ public class Cook {
         state = state.FREE;
     }
 
+    public CookStates getState() {
+        return state;
+    }
+
+    public void setState(CookStates state) {
+        this.state = state;
+    }
+
     public EmotionProperties getEmotionProperties() {
         return emotionProperties;
     }
@@ -31,7 +39,7 @@ public class Cook {
             output.append(COLON);
             output.append(" ");
             output.append(ReflectionUtil.getFieldValueAsInt(this.emotionProperties, field));
-            output.append("/n");
+            output.append("\n");
         }
         return output.toString();
     }
