@@ -1,5 +1,18 @@
-[
-    {
-
+{
+    "1": {
+        "name": "Бросаю готовку",
+        "emotionName" : "anger",
+        "emotionCriticalBorder" : 100,
+        "effect": {
+            "quality" : -100
+        }
+    },
+    "2": {
+        "name": "Мне нужно передохнуть",
+        "emotionName" : "fear",
+        "emotionCriticalBorder" : 100,
+        "effect": {
+            "quality" : -20
+        }
     }
-]
+}
