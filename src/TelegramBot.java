@@ -23,8 +23,6 @@ public class TelegramBot extends TelegramLongPollingBot {
     private static DataInitializer dataInitializer = new DataInitializer();
     private static Cook cook;
 
-    private boolean hasOrder = false;
-
     private static void init(){
         storageService = dataInitializer.initDataService();
         menuService = dataInitializer.initMenuService();
@@ -72,7 +70,7 @@ public class TelegramBot extends TelegramLongPollingBot {
                 //то применяется экшн к повару
             }
             else if (cook.getState().equals(CookStates.HAS_ORDER) && messageIsADish(message)) {
-                sendMsg(message, "Начинаю готовить");
+//                sendMsg(message, "Начинаю готовить");
                 cook.setState(CookStates.COOKING);
                 startCooking(message);
             }
