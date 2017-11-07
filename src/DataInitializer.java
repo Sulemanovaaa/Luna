@@ -1,8 +1,4 @@
-import com.sun.org.apache.regexp.internal.RE;
 import services.*;
-import services.StorageService;
-
-import javax.xml.crypto.Data;
 
 public class DataInitializer {
 
@@ -36,9 +32,7 @@ public class DataInitializer {
 
     public RecipeService initRecipeService() {
         RecipeService recipeService = new RecipeService(storageService, menuService);
-        recipeService.init();
-
+        recipeService.start();
         return recipeService;
     }
-
 }

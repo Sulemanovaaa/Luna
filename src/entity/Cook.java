@@ -14,20 +14,20 @@ public class Cook {
         state = state.FREE;
     }
 
-    public CookStates getState() {
-        return state;
-    }
-
-    public void setState(CookStates state) {
-        this.state = state;
-    }
-
     public EmotionProperties getEmotionProperties() {
         return emotionProperties;
     }
 
     public void setEmotionProperties(EmotionProperties emotionProperties) {
         this.emotionProperties = emotionProperties;
+    }
+
+    public CookStates getState() {
+        return state;
+    }
+
+    public void setState(CookStates state) {
+        this.state = state;
     }
 
     @Override

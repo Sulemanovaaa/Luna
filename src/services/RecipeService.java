@@ -19,6 +19,10 @@ public class RecipeService {
         this.menuService = menuService;
     }
 
+    public void start() {
+        init();
+    }
+
     public void init() {
         recipe = new Recipe();
     }
