@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 import entity.*;
 import services.*;
+=======
+import entity.Recipe;
+import entity.Stage;
+import services.RecipeService;
+import utils.DirectoryUtil;
+import utils.JsonUtil;
+>>>>>>> origin/Serega
 
 import java.util.List;
 
@@ -38,6 +46,7 @@ public class Test {
         Recipe recipe = recipeService.getRecipe(); // ПОЛУЧИТЬ ВЫБРАННЫЙ РЕЦЕПТ
 
 
+<<<<<<< HEAD
         // 1 ВАРИАНТ ПОЛУЧЕНИЯ РЕЦЕПТА И ЕГО ДАННЫХ
         recipeService.iteratorNext();
         Step step1 = recipeService.getCurrentStepInRecipe();
@@ -54,6 +63,15 @@ public class Test {
             cookService.checkReactions(); // ПРОВЕРЯЕМ ЭМОЦИИ ПОВАРА ПОСЛЕ КАЖДОГО ДЕЙСТВИЯ
             cookService.changeCookProperties(actionsInStep.get(1)); // ИЗМЕНЕНИЕ ЭМОЦИЙ ПОСЛЕ ДЕЙСТВИЯ
             System.out.println(); //ДЛЯ ОТЛАДКИ
+=======
+        System.out.println(recipeNames.size());
+
+        //ВЫБОР РЕЦЕПТА
+
+        Recipe recipe = recipeService.getRecipe(Recipe.class, "Шаурма"); // <-- Здесь текст нажатой кнопки
+        for (Stage stage: recipe.getStages()) {
+            System.out.println(stage.getName());
+>>>>>>> origin/Serega
         }
     }
 }
