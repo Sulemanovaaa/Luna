@@ -3,10 +3,9 @@ package services;
 import com.google.gson.reflect.TypeToken;
 import entity.Action;
 import entity.Reaction;
-import entity.Recipe;
 import entity.Step;
-import utils.DirectoryUtil;
 import utils.JsonUtil;
+import utils.DirectoryUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +17,6 @@ public class StorageService {
     private Map<Integer, Step> steps;
     private Map<Integer, Action> actions;
     private Map<Integer, Reaction> reactions;
-    private Map<String, String> emotionToDish;
 
     public void start() {
         init();
@@ -29,19 +27,16 @@ public class StorageService {
         steps = new HashMap<>();
         actions = new HashMap<>();
         reactions = new HashMap<>();
-        emotionToDish = new HashMap<>();
     }
 
     public boolean loadData() {
-        if (steps != null && actions != null && reactions != null && emotionToDish != null) {
+        if (steps != null && actions != null && reactions != null) {
             steps = JsonUtil.loadGenericMap(new TypeToken<Map<Integer, Step>>() {
             }.getType(), DirectoryUtil.STEPS_PATH);
             actions = JsonUtil.loadGenericMap(new TypeToken<Map<Integer, Action>>() {
             }.getType(), DirectoryUtil.ACTIONS_PATH);
             reactions = JsonUtil.loadGenericMap(new TypeToken<Map<Integer, Reaction>>() {
             }.getType(), DirectoryUtil.REACTIONS_PATH);
-            emotionToDish = JsonUtil.loadGenericMap(new TypeToken<Map<String, String>>() {
-            }.getType(), DirectoryUtil.EMOTION_TO_DISH);
             return true;
         }
         return false;
@@ -96,11 +91,4 @@ public class StorageService {
         this.reactions = reactions;
     }
 
-    public Map<String, String> getEmotionToDish() {
-        return emotionToDish;
-    }
-
-    public void setEmotionToDish(Map<String, String> emotionToDish) {
-        this.emotionToDish = emotionToDish;
-    }
 }

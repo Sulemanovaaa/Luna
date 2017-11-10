@@ -7,9 +7,11 @@ import java.lang.reflect.Field;
 public class Cook {
 
     private EmotionProperties emotionProperties;
+    private CookStates state;
 
     public void init() {
         emotionProperties = new EmotionProperties();
+        state = state.FREE;
     }
 
     public EmotionProperties getEmotionProperties() {
@@ -18,6 +20,14 @@ public class Cook {
 
     public void setEmotionProperties(EmotionProperties emotionProperties) {
         this.emotionProperties = emotionProperties;
+    }
+
+    public CookStates getState() {
+        return state;
+    }
+
+    public void setState(CookStates state) {
+        this.state = state;
     }
 
     @Override
@@ -29,7 +39,7 @@ public class Cook {
             output.append(COLON);
             output.append(" ");
             output.append(ReflectionUtil.getFieldValueAsInt(this.emotionProperties, field));
-            output.append("/n");
+            output.append("\n");
         }
         return output.toString();
     }

@@ -19,6 +19,10 @@ public class RecipeService {
         this.menuService = menuService;
     }
 
+    public void start() {
+        init();
+    }
+
     public void init() {
         recipe = new Recipe();
     }
@@ -54,9 +58,13 @@ public class RecipeService {
     }
 
 
-    public void iteratorNext() {
-        if (iterator.hasNext())
+    public boolean iteratorNext() {
+        if (iterator.hasNext()) {
             iteratorPair = (Map.Entry) iterator.next();
+            return true;
+        }
+        return false;
+
     }
 
     public Step getCurrentStepInRecipe() {
