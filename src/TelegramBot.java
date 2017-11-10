@@ -68,6 +68,8 @@ public class TelegramBot extends TelegramLongPollingBot {
             }
             else if (cook.getState().equals(CookStates.COOKING) && messageIsAction(message)) {
                 //то применяется экшн к повару
+                //чек реактивных реакций
+                //Эмоции повара применяются к блюду
             }
             else if (cook.getState().equals(CookStates.HAS_ORDER) && messageIsADish(message)) {
 //                sendMsg(message, "Начинаю готовить");
