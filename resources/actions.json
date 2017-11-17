@@ -1,145 +1,171 @@
 {
   "1": {
-    "name": "Блюдо подгорело",
-    "joy": "-50",
-    "trust": "0",
-    "fear": "20",
-    "surprise": "5",
-    "sadness": "40",
-    "disgust": "10",
-    "anger": "60",
-    "anticipation": "30"
+    "name": "Прибавить мощность плиты",
+    "effect" : {
+      "joy": "-50",
+      "trust": "0",
+      "fear": "20",
+      "surprise": "5",
+      "sadness": "40",
+      "disgust": "10",
+      "anger": "60",
+      "anticipation": "30"
+    }
   },
   "2": {
-    "name": "Необычная форма",
-    "joy": "5",
-    "trust": "0",
-    "fear": "5",
-    "surprise": "60",
-    "sadness": "-15",
-    "disgust": "0",
-    "anger": "0",
-    "anticipation": "50"   
+    "name": "Побросить необычный овощ",
+    "effect" : {
+      "joy": "5",
+      "trust": "0",
+      "fear": "5",
+      "surprise": "60",
+      "sadness": "-15",
+      "disgust": "0",
+      "anger": "0",
+      "anticipation": "50"
+    }
   },
   "3": {
-    "name": "Закрылись конкуренты", 
-    "joy": "60",
-    "trust": "0",
-    "fear": "-40",
-    "surprise": "30",
-    "sadness": "-30",
-    "disgust": "0",
-    "anger": "-50",
-    "anticipation": "0"   
+    "name": "Устроить пожар у конкурентов",
+    "effect" : {
+      "joy": "60",
+      "trust": "0",
+      "fear": "-40",
+      "surprise": "30",
+      "sadness": "-30",
+      "disgust": "0",
+      "anger": "-50",
+      "anticipation": "0"
+    }
   },
   "4": {
-    "name": "Большие чаевые",
-    "joy": "70",
-    "trust": "30",
-    "fear": "-10",
-    "surprise": "30",
-    "sadness": "-15",
-    "disgust": "-10",
-    "anger": "-20",
-    "anticipation": "-20"    
+    "name": "Оставить большие чаевые",
+    "effect" : {
+      "joy": "70",
+      "trust": "30",
+      "fear": "-10",
+      "surprise": "30",
+      "sadness": "-15",
+      "disgust": "-10",
+      "anger": "-20",
+      "anticipation": "-20"
+    }
   },
   "5": {
-    "name": "Сломалось оборудование",
-    "joy": "-50",
-    "trust": "5",
-    "fear": "50",
-    "surprise": "50",
-    "sadness": "40",
-    "disgust": "0",
-    "anger": "80",
-    "anticipation": "60"   
+    "name": "Сломать оборудование",
+    "effect" : {
+      "joy": "-50",
+      "trust": "5",
+      "fear": "50",
+      "surprise": "50",
+      "sadness": "40",
+      "disgust": "0",
+      "anger": "80",
+      "anticipation": "60"
+    }
   },
   "6": {
-    "name": "Испорченные овощи",
-    "joy": "-30",
-    "trust": "-15",
-    "fear": "0",
-    "surprise": "40",
-    "sadness": "30",
-    "disgust": "80",
-    "anger": "30",
-    "anticipation": "20"     
+    "name": "Испортить овощи",
+    "effect" : {
+      "joy": "-30",
+      "trust": "-15",
+      "fear": "0",
+      "surprise": "40",
+      "sadness": "30",
+      "disgust": "80",
+      "anger": "30",
+      "anticipation": "20"
+    }
   },
   "7": {
-    "name": "Короткое замыкание",
-    "joy": "-50",
-    "trust": "0",
-    "fear": "50",
-    "surprise": "80",
-    "sadness": "40",
-    "disgust": "0",
-    "anger": "80",
-    "anticipation": "40" 
+    "name": "Устроить короткое замыкание",
+    "effect" : {
+      "joy": "-50",
+      "trust": "0",
+      "fear": "50",
+      "surprise": "80",
+      "sadness": "40",
+      "disgust": "0",
+      "anger": "80",
+      "anticipation": "40"
+    }
   },
   "8": {
-    "name": "Проверка",
-    "joy": "-50",
-    "trust": "0",
-    "fear": "50",
-    "surprise": "40",
-    "sadness": "50",
-    "disgust": "0",
-    "anger": "30",
-    "anticipation": "60"    
+    "name": "Позвать проверку",
+    "effect" : {
+      "joy": "-50",
+      "trust": "0",
+      "fear": "50",
+      "surprise": "40",
+      "sadness": "50",
+      "disgust": "0",
+      "anger": "30",
+      "anticipation": "60"
+    }
   },
   "9": {
-    "name": "Оскорбление",
-    "joy": "-60",
-    "trust": "-35",
-    "fear": "10",
-    "surprise": "10",
-    "sadness": "30",
-    "disgust": "20",
-    "anger": "70",
-    "anticipation": "0"   
+    "name": "Оскорбить повара",
+    "effect" : {
+      "joy": "-60",
+      "trust": "-35",
+      "fear": "10",
+      "surprise": "10",
+      "sadness": "30",
+      "disgust": "20",
+      "anger": "70",
+      "anticipation": "0"
+    }
   },
   "10": {
-    "name": "Негативный отзыв",
-    "joy": "-40",
-    "trust": "-20",
-    "fear": "20",
-    "surprise": "20",
-    "sadness": "20",
-    "disgust": "30",
-    "anger": "50",
-    "anticipation": "5"
+    "name": "Оставить негативный отзыв",
+    "effect" : {
+      "joy": "-40",
+      "trust": "-20",
+      "fear": "20",
+      "surprise": "20",
+      "sadness": "20",
+      "disgust": "30",
+      "anger": "50",
+      "anticipation": "5"
+    }
   },
   "11": {
-    "name": "Позитивный отзыв",
-    "joy": "40",
-    "trust": "20",
-    "fear": "-20",
-    "surprise": "10",
-    "sadness": "-30",
-    "disgust": "-20",
-    "anger": "-50",
-    "anticipation": "-15"
+    "name": "Оставить положительный отзыв",
+    "effect" : {
+      "joy": "40",
+      "trust": "20",
+      "fear": "-20",
+      "surprise": "10",
+      "sadness": "-30",
+      "disgust": "-20",
+      "anger": "-50",
+      "anticipation": "-15"
+    }
   },
   "12": {
-    "name": "Порезался",
-    "joy": "-40",
-    "trust": "0",
-    "fear": "40",
-    "surprise": "20",
-    "sadness": "20",
-    "disgust": "50",
-    "anger": "75",
-    "anticipation": "70"   
+    "name": "Толкнуть повара, чтобы он порезался",
+    "effect" : {
+      "joy": "-40",
+      "trust": "0",
+      "fear": "40",
+      "surprise": "20",
+      "sadness": "20",
+      "disgust": "50",
+      "anger": "75",
+      "anticipation": "70"
+    }
   },
   "13": {
-    "name": "Позитивное общение с клиентом",
-    "joy": "60",
-    "trust": "40",
-    "fear": "-20",
-    "surprise": "5",
-    "sadness": "-30",
-    "disgust": "-10",
-    "anger": "-40",
-    "anticipation": "-20"
-  },
+    "name": "Поболтать с поваром",
+    "effect" : {
+      "joy": "60",
+      "trust": "40",
+      "fear": "-20",
+      "surprise": "5",
+      "sadness": "-30",
+      "disgust": "-10",
+      "anger": "-40",
+      "anticipation": "-20"
+    }
+  }
 }

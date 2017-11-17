@@ -13,10 +13,17 @@ public class MenuService {
 
     private List<Recipe> menu;
 
-    private DataService dataService;
+    private StorageService storageService;
 
-    public MenuService(DataService dataService) {
-        this.dataService = dataService;
+    public MenuService(StorageService storageService) {
+        this.storageService = storageService;
+    }
+
+    public void start() {
+        init();
+        loadMenu();
+        loadRecipes();
+        setCookingTime();
     }
 
     public void init() {
@@ -47,7 +54,7 @@ public class MenuService {
             for (Recipe recipe : menu) {
                 int cookingTime = 0;
                 for (int stepId : recipe.getAllStepsIdInStages()) {
-                    cookingTime += dataService.getStepById(stepId).getTime();
+                    cookingTime += storageService.getStepById(stepId).getTime();
                 }
                 recipe.setCookingTime(cookingTime);
             }

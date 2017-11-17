@@ -1,15 +1,10 @@
 package entity;
 
-
-import java.util.List;
-
 public class Step {
 
     private String name;
     private String description;
     private int time;
-
-    //private List<Integer> actions;
 
     public Step(String name, int time) {
         this.name = name;
@@ -39,13 +34,4 @@ public class Step {
     public void setTime(int time) {
         this.time = time;
     }
-/*
-    public List<Integer> getActions() {
-        return actions;
-    }
-
-    public void setActions(List<Integer> actions) {
-        this.actions = actions;
-    }
-*/
 }
