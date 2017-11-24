@@ -14,7 +14,7 @@ public class DishService {
     public void init() {
         dish = new Dish();
         dish.init();
-        dish.getFoodProperties().setQuality(50);
+        //dish.getFoodProperties().setQuality(50);
     }
 
     public Dish getDish() {
