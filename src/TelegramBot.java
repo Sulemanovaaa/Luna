@@ -1,4 +1,3 @@
-import com.sun.org.apache.regexp.internal.RE;
 import entity.*;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
@@ -68,6 +67,8 @@ public class TelegramBot extends TelegramLongPollingBot {
             }
             else if (cook.getState().equals(CookStates.COOKING) && messageIsAction(message)) {
                 //то применяется экшн к повару
+                cookService.checkReactions();
+
                 //чек реактивных реакций
                 //Эмоции повара применяются к блюду
             }
@@ -83,23 +84,23 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private void startCooking(Message message) {
 
-            if (recipeService.iteratorNext()) {
-                Step step = recipeService.getCurrentStepInRecipe();
-                showStepAndHisAction(message, step);
+        if (recipeService.iteratorNext()) {
+            Step step = recipeService.getCurrentStepInRecipe();
+            showStepAndHisAction(message, step);
 
-                //show steps by timer
-                TimerTask timerTask = new TimerTask() {
-                    @Override
-                    public void run() {
-                        startCooking(message);
-                    }
-                };
+            //show steps by timer
+            TimerTask timerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    startCooking(message);
+                }
+            };
 
-                Timer timer = new Timer();
-                timer.schedule(timerTask, step.getTime() * 1000);
-            } else {
-                cook.setState(CookStates.FREE);
-            }
+            Timer timer = new Timer();
+            timer.schedule(timerTask, step.getTime() * 1000);
+        } else {
+            cook.setState(CookStates.FREE);
+        }
 
     }
 
