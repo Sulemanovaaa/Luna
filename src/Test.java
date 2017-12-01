@@ -18,7 +18,7 @@ public class Test {
         MenuService menuService = new MenuService(storageService);
         menuService.start();
 
-        DishService dishService = new DishService();
+        DishService dishService = new DishService(storageService);
         dishService.start();
 
         CookService cookService = new CookService(storageService, dishService);
@@ -53,6 +53,7 @@ public class Test {
             List<Action> actionsInStep = recipeService.getAllActionsInStep(stepId); // ПОЛУЧИТЬ ДЕЙСТВИЯ НА ШАГЕ
             cookService.checkReactions(); // ПРОВЕРЯЕМ ЭМОЦИИ ПОВАРА ПОСЛЕ КАЖДОГО ДЕЙСТВИЯ
             cookService.changeCookProperties(actionsInStep.get(1)); // ИЗМЕНЕНИЕ ЭМОЦИЙ ПОСЛЕ ДЕЙСТВИЯ
+            String description = dishService.getDescriptionOfTheDish(); // ОПИСАНИЕ БЛЮДА
             System.out.println(); //ДЛЯ ОТЛАДКИ
         }
     }

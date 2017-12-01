@@ -1,12 +1,10 @@
 package services;
 
 import com.google.gson.reflect.TypeToken;
-import entity.Action;
-import entity.Reaction;
-import entity.Recipe;
-import entity.Step;
+import entity.*;
 import utils.DirectoryUtil;
 import utils.JsonUtil;
+import utils.ReflectionUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +16,7 @@ public class StorageService {
     private Map<Integer, Step> steps;
     private Map<Integer, Action> actions;
     private Map<Integer, Reaction> reactions;
+    private Map<String, List<DishDescription>> dishDescriptions;
 
     public void start() {
         init();
@@ -28,6 +27,7 @@ public class StorageService {
         steps = new HashMap<>();
         actions = new HashMap<>();
         reactions = new HashMap<>();
+        dishDescriptions = new HashMap<>();
     }
 
     public boolean loadData() {
@@ -38,6 +38,8 @@ public class StorageService {
             }.getType(), DirectoryUtil.ACTIONS_PATH);
             reactions = JsonUtil.loadGenericMap(new TypeToken<Map<Integer, Reaction>>() {
             }.getType(), DirectoryUtil.REACTIONS_PATH);
+            dishDescriptions = JsonUtil.loadGenericMap(new TypeToken<Map<String, List<DishDescription>>>() {
+            }.getType(), DirectoryUtil.DISH_DESCRIPTIONS);
             return true;
         }
         return false;
@@ -57,6 +59,10 @@ public class StorageService {
         return reactions.get(id);
     }
 
+    public List<DishDescription> getDishDescriptionsByFieldName(String fieldName) {
+        return dishDescriptions.get(fieldName);
+    }
+
 
 
     public List<Reaction> getReactionsById(List<Integer> ids) {
@@ -65,7 +71,6 @@ public class StorageService {
             reactionsList.add(reactions.get(id));
         return reactionsList;
     }
-
 
 
     public Map<Integer, Step> getSteps() {

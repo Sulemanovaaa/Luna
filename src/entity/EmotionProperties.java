@@ -1,5 +1,7 @@
 package entity;
 
+import utils.ReflectionUtil;
+
 public class EmotionProperties {
 
     private int joy;
@@ -10,6 +12,11 @@ public class EmotionProperties {
     private int disgust;
     private int anger;
     private int anticipation;
+
+    public EmotionProperties() {
+        int defaultValue = 50;
+        ReflectionUtil.setFieldsValueAsDefault(this, defaultValue);
+    }
 
     public int getJoy() {
         return joy;

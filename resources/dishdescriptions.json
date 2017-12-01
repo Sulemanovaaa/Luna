@@ -1,0 +1,114 @@
+{
+  "view": [
+    {
+      "value": "30",
+      "description": "выглядит не очень"
+    },
+    {
+      "value": "50",
+      "description": "выглядит неплохо"
+    },
+    {
+      "value": "70",
+      "description": "выглядит отлично"
+    }
+  ],
+  "keenness": [
+    {
+      "value": "30",
+      "description": ""
+    },
+    {
+      "value": "50",
+      "description": ""
+    },
+    {
+      "value": "70",
+      "description": ""
+    }
+  ],
+  "salinity": [
+    {
+      "value": "30",
+      "description": ""
+    },
+    {
+      "value": "50",
+      "description": ""
+    },
+    {
+      "value": "70",
+      "description": ""
+    }
+  ],
+  "sweetness": [
+    {
+      "value": "30",
+      "description": ""
+    },
+    {
+      "value": "50",
+      "description": ""
+    },
+    {
+      "value": "70",
+      "description": ""
+    }
+  ],
+  "sourness": [
+    {
+      "value": "30",
+      "description": ""
+    },
+    {
+      "value": "50",
+      "description": ""
+    },
+    {
+      "value": "70",
+      "description": ""
+    }
+  ],
+  "bitter": [
+    {
+      "value": "30",
+      "description": ""
+    },
+    {
+      "value": "50",
+      "description": ""
+    },
+    {
+      "value": "70",
+      "description": ""
+    }
+  ],
+  "roasting": [
+    {
+      "value": "30",
+      "description": ""
+    },
+    {
+      "value": "50",
+      "description": ""
+    },
+    {
+      "value": "70",
+      "description": ""
+    }
+  ],
+  "smell": [
+    {
+      "value": "30",
+      "description": "запах не очень"
+    },
+    {
+      "value": "50",
+      "description": "запах нормальный"
+    },
+    {
+      "value": "70",
+      "description": "запах отличный"
+    }
+  ]
+}

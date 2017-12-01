@@ -34,8 +34,6 @@ public class CookService {
     public void init() {
         cook = new Cook();
         cook.init();
-        cook.getEmotionProperties().setAnger(1000);
-        cook.getEmotionProperties().setFear(1000);
     }
 
     public void checkReactions() {
