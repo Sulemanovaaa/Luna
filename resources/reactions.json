@@ -14,5 +14,37 @@
         "effect": {
             "quality" : -20
         }
+    },
+    "3": {
+        "name": "Я увольняюсь",
+        "emotionName" : "anger",
+        "emotionCriticalBorder" : 100,
+        "effect": {
+            "quality" : -100
+        }
+    },
+    "4": {
+        "name": "Бросил нож в кого-то",
+        "emotionName": "anger",
+        "emotionCriticalBorder": 90,
+        "effect": {
+            "quality": -50
+        }
+    },
+    "5": {
+        "name": "Повар ругается матом, цензура",
+        "emotionName": "anger",
+        "emotionCriticalBorder": 80,
+        "effect": {
+            "quality": -10
+        }
+    },
+    "6": {
+        "name": "Повар старается угодить клиенту, он люит свою работу и он счастлив",
+        "emotionName": "joy",
+        "emotionCriticalBorder": 80,
+        "effect": {
+            "quality": -10
+        }
     }
 }
