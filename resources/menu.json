@@ -6,12 +6,12 @@
   },
   {
     "id": 2,
-    "name": "Пицца",
+    "name": "Паста",
     "fileName": "pizza.json"
   },
   {
     "id": 3,
-    "name": "Спагетти",
+    "name": "Кофе",
     "fileName": "spaghetti.json"
   }
 ]

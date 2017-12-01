@@ -83,23 +83,23 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private void startCooking(Message message) {
 
-            if (recipeService.iteratorNext()) {
-                Step step = recipeService.getCurrentStepInRecipe();
-                showStepAndHisAction(message, step);
+        if (recipeService.iteratorNext()) {
+            Step step = recipeService.getCurrentStepInRecipe();
+            showStepAndHisAction(message, step);
 
-                //show steps by timer
-                TimerTask timerTask = new TimerTask() {
-                    @Override
-                    public void run() {
-                        startCooking(message);
-                    }
-                };
+            //show steps by timer
+            TimerTask timerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    startCooking(message);
+                }
+            };
 
-                Timer timer = new Timer();
-                timer.schedule(timerTask, step.getTime() * 1000);
-            } else {
-                cook.setState(CookStates.FREE);
-            }
+            Timer timer = new Timer();
+            timer.schedule(timerTask, step.getTime() * 1000);
+        } else {
+            cook.setState(CookStates.FREE);
+        }
 
     }
 
