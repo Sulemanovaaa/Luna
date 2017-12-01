@@ -1,4 +1,3 @@
-import com.sun.org.apache.regexp.internal.RE;
 import entity.*;
 import org.telegram.telegrambots.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.api.objects.replykeyboard.buttons.KeyboardRow;
@@ -68,6 +67,8 @@ public class TelegramBot extends TelegramLongPollingBot {
             }
             else if (cook.getState().equals(CookStates.COOKING) && messageIsAction(message)) {
                 //то применяется экшн к повару
+                cookService.checkReactions();
+
                 //чек реактивных реакций
                 //Эмоции повара применяются к блюду
             }
