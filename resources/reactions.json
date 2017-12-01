@@ -4,7 +4,7 @@
         "emotionName" : "anger",
         "emotionCriticalBorder" : 100,
         "effect": {
-            "quality" : -100
+            "roasting" : -100
         }
     },
     "2": {
@@ -12,7 +12,7 @@
         "emotionName" : "fear",
         "emotionCriticalBorder" : 100,
         "effect": {
-            "quality" : -20
+            "roasting" : -20
         }
     }
 }
