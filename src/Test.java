@@ -51,7 +51,16 @@ public class Test {
         for (int stepId : recipeService.getAllStepsIdInRecipe()) { // ПОЛУЧИТЬ ШАГИ БЛЮДА
             Step step = recipeService.getStepInRecipe(stepId); //ПОЛУЧИТЬ ШАГ
             List<Action> actionsInStep = recipeService.getAllActionsInStep(stepId); // ПОЛУЧИТЬ ДЕЙСТВИЯ НА ШАГЕ
-            cookService.checkReactions(); // ПРОВЕРЯЕМ ЭМОЦИИ ПОВАРА ПОСЛЕ КАЖДОГО ДЕЙСТВИЯ
+            List<Integer> doReactionsId = cookService.checkReactions(); // ПРОВЕРЯЕМ ЭМОЦИИ ПОВАРА ПОСЛЕ КАЖДОГО ДЕЙСТВИЯ
+/*
+            for (int reactionId : doReactionsId) {
+                Reaction reaction = storageService.getReactionById(reactionId);
+                // пишешь reaction.getName();
+                if (cookService.checkHappenedReaction(reactionId)) {
+                    return;
+                }
+            }
+*/
             cookService.changeCookProperties(actionsInStep.get(1)); // ИЗМЕНЕНИЕ ЭМОЦИЙ ПОСЛЕ ДЕЙСТВИЯ
             String description = dishService.getDescriptionOfTheDish(); // ОПИСАНИЕ БЛЮДА
             System.out.println(); //ДЛЯ ОТЛАДКИ

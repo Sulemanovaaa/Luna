@@ -39,7 +39,7 @@ public class DishService {
         for (Field field : dish.getFoodProperties().getClass().getDeclaredFields()) { // цикл полей блюда
             List<DishDescription> dishDescriptions = storageService.getDishDescriptionsByFieldName(field.getName()); // получаем границы и описания одного поля блюда
             for (DishDescription dishDescription : dishDescriptions) { // цикл сравнений
-                if (ReflectionUtil.getFieldValueAsInt(dish.getFoodProperties(), field) < dishDescription.getValue() && !dishDescription.getDescription().isEmpty()) { // сравниваем значение свойства блюда с границами из файла
+                if (ReflectionUtil.getFieldValueAsInt(dish.getFoodProperties(), field) <= dishDescription.getValue() && !dishDescription.getDescription().isEmpty()) { // сравниваем значение свойства блюда с границами из файла
                     output.append(dishDescription.getDescription()); // записываем описание по найденной границе
                     output.append(", ");
                     break;

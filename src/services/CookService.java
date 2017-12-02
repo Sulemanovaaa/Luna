@@ -36,11 +36,17 @@ public class CookService {
         cook.init();
     }
 
-    public void checkReactions() {
+    public List<Integer> checkReactions() {
         List<Integer> reactionsId = checkCriticalBorders(storageService.getReactions());
         if (!reactionsId.isEmpty()) {
             changeDishProperties(storageService.getReactionsById(reactionsId));
+            return reactionsId;
         }
+        return null;
+    }
+
+    public boolean checkHappenedReaction(int doReactionId) {
+        return doReactionId <= 0;
     }
 
     public void changeCookProperties(Action action) {
