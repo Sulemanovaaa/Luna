@@ -13,6 +13,7 @@ public class DirectoryUtil {
     public static final String STEPS_PATH = "./resources/steps.json";
     public static final String ACTIONS_PATH = "./resources/actions.json";
     public static final String REACTIONS_PATH = "./resources/reactions.json";
+    public static final String DISH_DESCRIPTIONS = "./resources/dishdescriptions.json";
     private static final String JSON_EXTENSION = "json";
 
     public static boolean FileExists(String path) {

@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
+    "name": "Паста",
+    "fileName": "pasta.json"
+  },
+  {
+    "id": 2,
     "name": "Шаурма",
     "fileName": "shaurma.json"
   },
   {
-    "id": 2,
-    "name": "Пицца",
-    "fileName": "pizza.json"
-  },
-  {
     "id": 3,
-    "name": "Спагетти",
-    "fileName": "spaghetti.json"
+    "name": "Кофе",
+    "fileName": "coffee.json"
   }
 ]

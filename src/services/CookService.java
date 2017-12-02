@@ -34,15 +34,19 @@ public class CookService {
     public void init() {
         cook = new Cook();
         cook.init();
-        cook.getEmotionProperties().setAnger(1000);
-        cook.getEmotionProperties().setFear(1000);
     }
 
-    public void checkReactions() {
+    public List<Integer> checkReactions() {
         List<Integer> reactionsId = checkCriticalBorders(storageService.getReactions());
         if (!reactionsId.isEmpty()) {
             changeDishProperties(storageService.getReactionsById(reactionsId));
+            return reactionsId;
         }
+        return null;
+    }
+
+    public boolean checkHappenedReaction(int doReactionId) {
+        return doReactionId <= 0;
     }
 
     public void changeCookProperties(Action action) {

@@ -1,5 +1,6 @@
 package utils;
 
+import entity.DishDescription;
 import entity.FoodProperties;
 
 import java.lang.reflect.Field;
@@ -24,6 +25,15 @@ public class ReflectionUtil {
     public static FoodProperties getFieldValueAsFoodProperties(Object obj, Field field) {
         try {
             return (FoodProperties) field.get(obj);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static DishDescription getFieldValueAsDishDescription(Object obj, Field field) {
+        try {
+            return (DishDescription) field.get(obj);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
@@ -79,9 +89,21 @@ public class ReflectionUtil {
             Field field = obj.getClass().getDeclaredField(fieldName);
             field.setAccessible(true);
             int currentValue = (int) field.get(obj);
-            field.set(obj, currentValue + delta);
+            int newValue = ScaleUtil.checkAndSetValue(currentValue + delta);
+            field.set(obj, newValue);
         } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void setFieldsValueAsDefault(Object obj, int defaultValue) {
+        for (Field field : obj.getClass().getDeclaredFields()) {
+            field.setAccessible(true);
+            try {
+                field.set(obj, defaultValue);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

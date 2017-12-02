@@ -19,7 +19,7 @@ public class DataInitializer {
     }
 
     public DishService initDishService() {
-        dishService = new DishService();
+        dishService = new DishService(storageService);
         dishService.start();
         return dishService;
     }

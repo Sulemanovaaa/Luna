@@ -1,7 +1,8 @@
 package entity;
 
-public class FoodProperties {
+import utils.ReflectionUtil;
 
+public class FoodProperties {
 
     //Внешний вид
     private int view;
@@ -19,6 +20,11 @@ public class FoodProperties {
     private int roasting;
     //Запах
     private int smell;
+
+    public FoodProperties() {
+        int defaultValue = 50;
+        ReflectionUtil.setFieldsValueAsDefault(this, defaultValue);
+    }
 
     public int getView() {
         return view;
