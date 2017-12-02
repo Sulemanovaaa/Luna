@@ -1,0 +1,154 @@
+{
+    "-1": {
+        "name": "Бросаю готовку",
+        "emotionName" : "anger",
+        "emotionCriticalBorder" : 100,
+        "effect": {
+             "view": -100,
+            "keenness":-100,
+            "salinity":-100,
+            "sweetness":-100,
+            "sourness": -100,
+            "bitter":-100,
+            "roasting":-100,
+            "smell":-100
+        }
+    },
+    "1": {
+        "name": "Мне нужно передохнуть",
+        "emotionName" : "fear",
+        "emotionCriticalBorder" : 100,
+        "effect": {
+             "view": -100,
+            "keenness":-100,
+            "salinity":-100,
+            "sweetness":-100,
+            "sourness":-100,
+            "bitter":-100,
+            "roasting":-100,
+            "smell":-100
+        }
+    },
+    "2":{
+    "name": "Доваблю  вкусный соус",
+        "emotionName" : "joy",
+        "emotionCriticalBorder" :75,
+        "effect": {
+            "view": 80,
+            "keenness": 70,
+            "salinity": 70,
+            "sweetness": 10,
+            "sourness": 10, 
+            "bitter":10,
+            "roasting":50,
+            "smell":75
+            }
+        },
+      "-2":{
+        "name": "Взять большие чаевые ",
+        "emotionName" : "surprise",
+        "emotionCriticalBorder" :80,
+        "effect": {
+            "view": 80,
+            "keenness": 70,
+            "salinity": 70,
+            "sweetness": 30,
+            "sourness": 10, 
+            "bitter":10,
+            "roasting":50,
+            "smell":75
+            }
+         },                  
+        "-3":{
+    "name": "Пережарю мясо",
+        "emotionName" : "sadness",
+        "emotionCriticalBorder" :50,
+        "effect": {
+             "view": 10,
+            "keenness": 30,
+            "salinity": 50,
+            "sweetness": 0,
+            "sourness": 60, 
+            "bitter":60,
+            "roasting":100,
+            "smell":60
+            }
+           },
+      "3":{
+        "name": "Увижу таракана",
+        "emotionName" : "disgust",
+        "emotionCriticalBorder" :90,
+        "effect": {
+             "view": 50,
+            "keenness": 60,
+            "salinity": 50,
+            "sweetness": 0,
+            "sourness": 60, 
+            "bitter":60,
+            "roasting":50,
+            "smell":60
+            }
+           },
+           "-4":{
+        "name": "Выслушаю недовольство клиента",
+        "emotionName" : "trust",
+        "emotionCriticalBorder" :60,
+        "effect": {
+            "view": 50,
+            "keenness": 60,
+            "salinity": 50,
+            "sweetness": 0,
+            "sourness": 60, 
+            "bitter":60,
+            "roasting":50,
+            "smell":60
+            }
+           },
+           "4":{
+        "name": "Добавлю необычный овощь по прозьбе клиента",
+        "emotionName" : "anticipation",
+        "emotionCriticalBorder" :75,
+        "effect": {
+            "view": 76,
+            "keenness": 80,
+            "salinity": 60,
+            "sweetness": 0,
+            "sourness": 20, 
+            "bitter":70,
+            "roasting":50,
+            "smell":45
+            }
+           },
+           "5":{
+        "name": "Добавлю много соли",
+        "emotionName" : "anticipation",
+        "emotionCriticalBorder" :20,
+        "effect": {
+            "view":40 ,
+            "keenness": 60,
+            "salinity": 90,
+            "sweetness": 0,
+            "sourness": 30, 
+            "bitter":70,
+            "roasting":40,
+            "smell":30
+            }
+           },
+           "5":{
+        "name": "",
+        "emotionName" : "anticipation",
+        "emotionCriticalBorder" :40,
+        "effect": {
+            "view":40 ,
+            "keenness": 60,
+            "salinity": 90,
+            "sweetness": 0,
+            "sourness": 30, 
+            "bitter":70,
+            "roasting":40,
+            "smell":30
+            }
+           },
+           
+          
+}
