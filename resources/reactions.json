@@ -4,6 +4,7 @@
         "emotionName" : "anger",
         "emotionCriticalBorder" : 100,
         "effect": {
+            "view" : 0,
             "roasting" : -100
         }
     },

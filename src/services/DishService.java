@@ -41,7 +41,7 @@ public class DishService {
             for (DishDescription dishDescription : dishDescriptions) { // цикл сравнений
                 if (ReflectionUtil.getFieldValueAsInt(dish.getFoodProperties(), field) <= dishDescription.getValue() && !dishDescription.getDescription().isEmpty()) { // сравниваем значение свойства блюда с границами из файла
                     output.append(dishDescription.getDescription()); // записываем описание по найденной границе
-                    output.append(", ");
+                    output.append("\n");
                     break;
                 }
             }
@@ -50,6 +50,6 @@ public class DishService {
     }
 
     public String getDescriptionOfTheDish() {
-        return "Блюдо - " + appendDishDescriptions();
+        return "Вот что я приготовиль:\n" + appendDishDescriptions();
     }
 }

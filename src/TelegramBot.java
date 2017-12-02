@@ -63,17 +63,21 @@ public class TelegramBot extends TelegramLongPollingBot {
             }
             else if (cook.getState().equals(CookStates.FREE) &&  message.getText().equals("Сделать заказ")) {
                 showMenu(message);
-                cook.setState(CookStates.HAS_ORDER);
             }
             else if (cook.getState().equals(CookStates.COOKING) && messageIsAction(message)) {
-                //то применяется экшн к повару
-                cookService.checkReactions();
 
-                //чек реактивных реакций
-                //Эмоции повара применяются к блюду
+                List<Integer> doReactionsId = cookService.checkReactions();
+                for (int reactionId : doReactionsId) {
+                    Reaction reaction = storageService.getReactionById(reactionId);
+                    sendMsg(message, reaction.getName());
+                    if (cookService.checkHappenedReaction(reactionId)) {
+                        sendMsg(message, dishService.getDescriptionOfTheDish());
+                        cook.setState(CookStates.FREE);
+                        return;
+                    }
+                }
             }
-            else if (cook.getState().equals(CookStates.HAS_ORDER) && messageIsADish(message)) {
-//                sendMsg(message, "Начинаю готовить");
+            else if (cook.getState().equals(CookStates.FREE) && messageIsADish(message)) {
                 cook.setState(CookStates.COOKING);
                 startCooking(message);
             }
@@ -84,7 +88,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private void startCooking(Message message) {
 
-        if (recipeService.iteratorNext()) {
+        if (recipeService.iteratorNext() && cook.getState().equals(CookStates.COOKING)) {
             Step step = recipeService.getCurrentStepInRecipe();
             showStepAndHisAction(message, step);
 
@@ -95,10 +99,12 @@ public class TelegramBot extends TelegramLongPollingBot {
                     startCooking(message);
                 }
             };
-
             Timer timer = new Timer();
             timer.schedule(timerTask, step.getTime() * 1000);
         } else {
+            if (cook.getState().equals(CookStates.COOKING)) {
+                sendMsg(message, dishService.getDescriptionOfTheDish());
+            }
             cook.setState(CookStates.FREE);
         }
 
