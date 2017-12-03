@@ -19,7 +19,7 @@
         "emotionName" : "fear",
         "emotionCriticalBorder" : 100,
         "effect": {
-             "view": -100,
+             "view": -,
             "keenness":-100,
             "salinity":-100,
             "sweetness":-100,
@@ -44,21 +44,7 @@
             "smell":75
             }
         },
-      "-2":{
-        "name": "Взять большие чаевые ",
-        "emotionName" : "surprise",
-        "emotionCriticalBorder" :80,
-        "effect": {
-            "view": 80,
-            "keenness": 70,
-            "salinity": 70,
-            "sweetness": 30,
-            "sourness": 10, 
-            "bitter":10,
-            "roasting":50,
-            "smell":75
-            }
-         },                  
+                     
         "-3":{
     "name": "Пережарю мясо",
         "emotionName" : "sadness",
@@ -90,7 +76,7 @@
             }
            },
            "-4":{
-        "name": "Выслушаю недовольство клиента",
+        "name": "Порезать не свежий овощь в блюдо"
         "emotionName" : "trust",
         "emotionCriticalBorder" :60,
         "effect": {
@@ -104,9 +90,9 @@
             "smell":60
             }
            },
-           "4":{
+           "":{
         "name": "Добавлю необычный овощь по прозьбе клиента",
-        "emotionName" : "anticipation",
+        "emotionName" : "suprise"
         "emotionCriticalBorder" :75,
         "effect": {
             "view": 76,
