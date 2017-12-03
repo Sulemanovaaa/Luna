@@ -119,10 +119,10 @@
             "smell":45
             }
            },
-           "5":{
+           "-5":{
         "name": "Добавлю много соли",
         "emotionName" : "anticipation",
-        "emotionCriticalBorder" :20,
+        "emotionCriticalBorder" :60,
         "effect": {
             "view":40 ,
             "keenness": 60,
@@ -134,21 +134,110 @@
             "smell":30
             }
            },
-           "5":{
-        "name": "",
+           "-6":{
+        "name": "Недосолю",
+        "emotionName" : "sadness",
+        "emotionCriticalBorder" :67,
+        "effect": {
+            "view":60 ,
+            "keenness": 50,
+            "salinity": 10,
+            "sweetness": 0,
+            "sourness": 20, 
+            "bitter":20,
+            "roasting":50,
+            "smell":20
+            }
+           },
+            "5":{
+        "name": "Моё блюдо похвалили",
+        "emotionName" : "joy",
+        "emotionCriticalBorder" :90,
+        "effect": {
+            "view":78 ,
+            "keenness": 80,
+            "salinity": 50,
+            "sweetness": 10,
+            "sourness": 10, 
+            "bitter":10,
+            "roasting":50,
+            "smell":70
+            }
+           },
+           "6":{
+        "name": "У конкурентов пожар",
+        "emotionName" : "joy",
+        "emotionCriticalBorder" :60,
+        "effect": {
+            "view":78 ,
+            "keenness": 78,
+            "salinity": 90,
+            "sweetness": 10,
+            "sourness": 10, 
+            "bitter":10,
+            "roasting":50,
+            "smell":70
+            }
+           },
+            "7":{
+        "name": "Порезался",
+        "emotionName" : "sudness",
+        "emotionCriticalBorder" :80,
+        "effect": {
+            "view":60 ,
+            "keenness": 50,
+            "salinity": 40,
+            "sweetness": 0,
+            "sourness": 0, 
+            "bitter":0,
+            "roasting":40,
+            "smell":40
+            }
+           },
+           "-7":{
+        "name": "Мне нужно быть осторожнее",
         "emotionName" : "anticipation",
-        "emotionCriticalBorder" :40,
+        "emotionCriticalBorder" :80,
         "effect": {
-            "view":40 ,
-            "keenness": 60,
-            "salinity": 90,
+            "view":50 ,
+            "keenness": 30,
+            "salinity": 40,
             "sweetness": 0,
-            "sourness": 30, 
-            "bitter":70,
-            "roasting":40,
-            "smell":30
+            "sourness": 0, 
+            "bitter":0,
+            "roasting":30,
+            "smell":40
             }
            },
-           
+            "-8":{
+        "name": "Меня оскорбили",
+        "emotionName" : "anger",
+        "emotionCriticalBorder" :90,
+        "effect": {
+            "view":30 ,
+            "keenness": 20,
+            "salinity": 50,
+            "sweetness": 0,
+            "sourness": 65, 
+            "bitter":65,
+            "roasting":20,
+            "smell":20
+            }
+           },
+           "8":{
+        "name": "Испортить овощи",
+        "emotionName" : "sadness",
+        "emotionCriticalBorder" :65,
+        "effect": {
+            "view":50 ,
+            "keenness": 30,
+            "salinity": 50,
+            "sweetness": 0,
+            "sourness": 80, 
+            "bitter":70,
+            "roasting"30,
+            "smell":40
+            }
+      }     
           
 }
