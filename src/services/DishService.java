@@ -46,7 +46,7 @@ public class DishService {
                 }
             }
         }
-        return output.substring(0, output.length() - 2);
+        return output.toString();
     }
 
     public String getDescriptionOfTheDish() {

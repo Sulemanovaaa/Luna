@@ -71,8 +71,9 @@ public class TelegramBot extends TelegramLongPollingBot {
                     Reaction reaction = storageService.getReactionById(reactionId);
                     sendMsg(message, reaction.getName());
                     if (cookService.checkHappenedReaction(reactionId)) {
-                        sendMsg(message, dishService.getDescriptionOfTheDish());
                         cook.setState(CookStates.FREE);
+                        sendMsg(message, dishService.getDescriptionOfTheDish());
+                        cook.setEmotionProperties(new EmotionProperties());
                         return;
                     }
                 }
@@ -81,12 +82,13 @@ public class TelegramBot extends TelegramLongPollingBot {
                 cook.setState(CookStates.COOKING);
                 startCooking(message);
             }
-            else
-                sendMsg(message, "Я не знаю что ответить на это");
+//            else
+//                sendMsg(message, "Я не знаю что ответить на это");
         }
     }
 
     private void startCooking(Message message) {
+        Timer timer = new Timer();
 
         if (recipeService.iteratorNext() && cook.getState().equals(CookStates.COOKING)) {
             Step step = recipeService.getCurrentStepInRecipe();
@@ -99,9 +101,10 @@ public class TelegramBot extends TelegramLongPollingBot {
                     startCooking(message);
                 }
             };
-            Timer timer = new Timer();
             timer.schedule(timerTask, step.getTime() * 1000);
         } else {
+            timer.cancel();
+            timer.purge();
             if (cook.getState().equals(CookStates.COOKING)) {
                 sendMsg(message, dishService.getDescriptionOfTheDish());
             }
