@@ -167,5 +167,61 @@
       "anger": "-40",
       "anticipation": "-20"
     }
+  },
+
+  "14": {
+    "name": "Толкнуть повара, чтобы он обжегся",
+    "effect" : {
+        "joy": "-50",
+        "trust": "0",
+        "fear": "50",
+        "surprise": "20",
+        "sadness": "20",
+        "disgust": "60",
+        "anger": "70",
+        "anticipation": "65"
+    }
+  },
+
+  "15": {
+    "name": "Попросить необычный кофе",
+    "effect" : {
+      "joy": "5",
+      "trust": "0",
+      "fear": "5",
+      "surprise": "60",
+      "sadness": "-15",
+      "disgust": "0",
+      "anger": "0",
+      "anticipation": "50"
+    }
+  },
+
+  "16": {
+    "name": "Попросить воды",
+    "effect" : {
+      "joy": "5",
+      "trust": "0",
+      "fear": "5",
+      "surprise": "20",
+      "sadness": "-5",
+      "disgust": "0",
+      "anger": "0",
+      "anticipation": "10"
+    }
+  },
+
+  "17": {
+    "name": "Плюнуть в чашку",
+    "effect" : {
+      "joy": "-40",
+      "trust": "0",
+      "fear": "0",
+      "surprise": "20",
+      "sadness": "25",
+      "disgust": "50",
+      "anger": "30",
+      "anticipation": "40"
+    }
   }
 }
