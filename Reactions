@@ -182,7 +182,7 @@
             "smell":70
             }
            },
-        "11":{
+        "10":{
         "name": "Повар обжегся",
         "emotionName" : "anticipation",
         "emotionCriticalBorder" : 30,
@@ -197,7 +197,7 @@
             "smell":30
             }
            },  
-          "12":{
+          "11":{
         "name": "Повар испортил овощи из-за тупого ножа",
         "emotionName" : "anticipation",
         "emotionCriticalBorder" : 20,
