@@ -1,5 +1,6 @@
 package entity;
 
+import services.StorageService;
 import utils.ReflectionUtil;
 
 public class EmotionProperties {
@@ -14,8 +15,7 @@ public class EmotionProperties {
     private int anticipation;
 
     public EmotionProperties() {
-        int defaultValue = 50;
-        ReflectionUtil.setFieldsValueAsDefault(this, defaultValue);
+        ReflectionUtil.setFieldsValueAsDefault(this, StorageService.defaultValue);
     }
 
     public int getJoy() {

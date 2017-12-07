@@ -1,5 +1,6 @@
 package entity;
 
+import services.StorageService;
 import utils.ReflectionUtil;
 
 public class FoodProperties {
@@ -22,8 +23,7 @@ public class FoodProperties {
     private int smell;
 
     public FoodProperties() {
-        int defaultValue = 50;
-        ReflectionUtil.setFieldsValueAsDefault(this, defaultValue);
+        ReflectionUtil.setFieldsValueAsDefault(this, StorageService.defaultValue);
     }
 
     public int getView() {

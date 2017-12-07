@@ -54,7 +54,11 @@ public class CookService {
             ReflectionUtil.setFieldValueByNameAsInt(field.getName(), cook.getEmotionProperties(), ReflectionUtil.getFieldValueByNameAsInt(action.getEffect(), field.getName()));
     }
 
-
+    public void keepCalm() {
+        for (Field field : cook.getEmotionProperties().getClass().getDeclaredFields()) {
+            ReflectionUtil.setFieldValueByNameAsInt(field.getName(), cook.getEmotionProperties(), calmFormula(ReflectionUtil.getFieldValueAsInt(cook.getEmotionProperties(), field)));
+        }
+    }
 
 
 
@@ -91,7 +95,14 @@ public class CookService {
     private boolean borderCheck(Object obj1, Object obj2, String fieldName) {
         int cookEmotionProperties = ReflectionUtil.getFieldValueByNameAsInt(obj1, fieldName);
         int criticalBorder = ReflectionUtil.getFieldValueByNameAsInt(obj2, EMOTION_CRITICAL_BORDER_PROPERTY);
+        if (criticalBorder < 50) {
+            return cookEmotionProperties <= criticalBorder;
+        }
         return cookEmotionProperties >= criticalBorder;
+    }
+
+    private int calmFormula(int currentEmotionValue) {
+        return (StorageService.defaultValue - currentEmotionValue) * StorageService.calmCoefficient / 100;
     }
 
 
