@@ -2,14 +2,14 @@
   "1": {
     "name": "Прибавить мощность плиты",
     "effect" : {
-      "joy": "-50",
+      "joy": "-10",
       "trust": "0",
-      "fear": "20",
+      "fear": "11",
       "surprise": "5",
-      "sadness": "40",
+      "sadness": "8",
       "disgust": "10",
-      "anger": "60",
-      "anticipation": "30"
+      "anger": "15",
+      "anticipation": "6"
     }
   },
   "2": {
@@ -18,167 +18,167 @@
       "joy": "5",
       "trust": "0",
       "fear": "5",
-      "surprise": "60",
-      "sadness": "-15",
+      "surprise": "15",
+      "sadness": "-5",
       "disgust": "0",
       "anger": "0",
-      "anticipation": "50"
+      "anticipation": "10"
     }
   },
   "3": {
     "name": "Устроить пожар у конкурентов",
     "effect" : {
-      "joy": "60",
+      "joy": "15",
       "trust": "0",
-      "fear": "-40",
-      "surprise": "30",
-      "sadness": "-30",
+      "fear": "-15",
+      "surprise": "7",
+      "sadness": "-10",
       "disgust": "0",
-      "anger": "-50",
+      "anger": "-12",
       "anticipation": "0"
     }
   },
   "4": {
     "name": "Оставить большие чаевые",
     "effect" : {
-      "joy": "70",
-      "trust": "30",
-      "fear": "-10",
-      "surprise": "30",
-      "sadness": "-15",
-      "disgust": "-10",
-      "anger": "-20",
-      "anticipation": "-20"
+      "joy": "17",
+      "trust": "6",
+      "fear": "-9",
+      "surprise": "11",
+      "sadness": "-10",
+      "disgust": "-7",
+      "anger": "-10",
+      "anticipation": "-5"
     }
   },
   "5": {
     "name": "Сломать оборудование",
     "effect" : {
-      "joy": "-50",
+      "joy": "-17",
       "trust": "5",
-      "fear": "50",
-      "surprise": "50",
-      "sadness": "40",
+      "fear": "12",
+      "surprise": "12",
+      "sadness": "15",
       "disgust": "0",
-      "anger": "80",
-      "anticipation": "60"
+      "anger": "10",
+      "anticipation": "6"
     }
   },
   "6": {
     "name": "Испортить овощи",
     "effect" : {
-      "joy": "-30",
-      "trust": "-15",
-      "fear": "0",
-      "surprise": "40",
-      "sadness": "30",
-      "disgust": "80",
-      "anger": "30",
-      "anticipation": "20"
+      "joy": "-8",
+      "trust": "-5",
+      "fear": "5",
+      "surprise": "10",
+      "sadness": "10",
+      "disgust": "12",
+      "anger": "7",
+      "anticipation": "2"
     }
   },
   "7": {
     "name": "Устроить короткое замыкание",
     "effect" : {
-      "joy": "-50",
+      "joy": "-15",
       "trust": "0",
-      "fear": "50",
-      "surprise": "80",
-      "sadness": "40",
+      "fear": "15",
+      "surprise": "15",
+      "sadness": "12",
       "disgust": "0",
-      "anger": "80",
-      "anticipation": "40"
+      "anger": "10",
+      "anticipation": "4"
     }
   },
   "8": {
     "name": "Позвать проверку",
     "effect" : {
-      "joy": "-50",
+      "joy": "-15",
       "trust": "0",
-      "fear": "50",
-      "surprise": "40",
-      "sadness": "50",
+      "fear": "15",
+      "surprise": "10",
+      "sadness": "12",
       "disgust": "0",
-      "anger": "30",
-      "anticipation": "60"
+      "anger": "8",
+      "anticipation": "12"
     }
   },
   "9": {
     "name": "Оскорбить повара",
     "effect" : {
-      "joy": "-60",
-      "trust": "-35",
-      "fear": "10",
+      "joy": "-17",
+      "trust": "-12",
+      "fear": "5",
       "surprise": "10",
-      "sadness": "30",
-      "disgust": "20",
-      "anger": "70",
+      "sadness": "15",
+      "disgust": "5",
+      "anger": "17",
       "anticipation": "0"
     }
   },
   "10": {
     "name": "Оставить негативный отзыв",
     "effect" : {
-      "joy": "-40",
-      "trust": "-20",
-      "fear": "20",
-      "surprise": "20",
-      "sadness": "20",
-      "disgust": "30",
-      "anger": "50",
-      "anticipation": "5"
+      "joy": "-17",
+      "trust": "-12",
+      "fear": "5",
+      "surprise": "7",
+      "sadness": "17",
+      "disgust": "5",
+      "anger": "12",
+      "anticipation": "0"
     }
   },
   "11": {
     "name": "Оставить положительный отзыв",
     "effect" : {
-      "joy": "40",
-      "trust": "20",
-      "fear": "-20",
-      "surprise": "10",
-      "sadness": "-30",
-      "disgust": "-20",
-      "anger": "-50",
-      "anticipation": "-15"
+      "joy": "15",
+      "trust": "5",
+      "fear": "-10",
+      "surprise": "7",
+      "sadness": "-12",
+      "disgust": "-7",
+      "anger": "-12",
+      "anticipation": "0"
     }
   },
   "12": {
     "name": "Толкнуть повара, чтобы он порезался",
     "effect" : {
-      "joy": "-40",
-      "trust": "0",
-      "fear": "40",
-      "surprise": "20",
-      "sadness": "20",
-      "disgust": "50",
-      "anger": "75",
-      "anticipation": "70"
+      "joy": "-15",
+      "trust": "-12",
+      "fear": "15",
+      "surprise": "10",
+      "sadness": "10",
+      "disgust": "10",
+      "anger": "7",
+      "anticipation": "0"
     }
   },
   "13": {
     "name": "Поболтать с поваром",
     "effect" : {
-      "joy": "60",
-      "trust": "40",
-      "fear": "-20",
-      "surprise": "5",
-      "sadness": "-30",
-      "disgust": "-10",
-      "anger": "-40",
-      "anticipation": "-20"
+      "joy": "15",
+      "trust": "12",
+      "fear": "-10",
+      "surprise": "7",
+      "sadness": "-10",
+      "disgust": "-7",
+      "anger": "-10",
+      "anticipation": "0"
     }
   },
   "14": {
     "name": "Толкнуть повара, чтобы он обжегся",
     "effect" : {
-      "joy": "-50",
-      "trust": "0",
-      "fear": "50",
-      "surprise": "20",
-      "sadness": "20",
-      "disgust": "60",
-      "anger": "70",
-      "anticipation": "65"
+      "joy": "-15",
+      "trust": "-10",
+      "fear": "15",
+      "surprise": "12",
+      "sadness": "10",
+      "disgust": "10",
+      "anger": "7",
+      "anticipation": "0"
     }
   },
   "15": {
@@ -187,11 +187,11 @@
       "joy": "5",
       "trust": "0",
       "fear": "5",
-      "surprise": "60",
-      "sadness": "-15",
+      "surprise": "15",
+      "sadness": "-5",
       "disgust": "0",
       "anger": "0",
-      "anticipation": "50"
+      "anticipation": "10"
     }
   },
 
@@ -199,13 +199,13 @@
     "name": "Попросить воды",
     "effect" : {
       "joy": "5",
-      "trust": "0",
+      "trust": "5",
       "fear": "5",
-      "surprise": "20",
+      "surprise": "10",
       "sadness": "-5",
-      "disgust": "0",
+      "disgust": "5",
       "anger": "0",
-      "anticipation": "10"
+      "anticipation": "5"
     }
   }
 }

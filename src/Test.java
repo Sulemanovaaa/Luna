@@ -62,6 +62,7 @@ public class Test {
             }
 */
             cookService.changeCookProperties(actionsInStep.get(1)); // ИЗМЕНЕНИЕ ЭМОЦИЙ ПОСЛЕ ДЕЙСТВИЯ
+            cookService.keepCalm();
             String description = dishService.getDescriptionOfTheDish(); // ОПИСАНИЕ БЛЮДА
             System.out.println(); //ДЛЯ ОТЛАДКИ
         }

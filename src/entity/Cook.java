@@ -34,6 +34,7 @@ public class Cook {
     public String toString() {
         final String COLON = ":";
         StringBuilder output = new StringBuilder();
+        output.append("Состояние повара:\n");
         for (Field field : emotionProperties.getClass().getDeclaredFields()) {
             output.append(ReflectionUtil.getFieldName(field));
             output.append(COLON);

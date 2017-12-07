@@ -1,113 +1,113 @@
 {
   "view": [
     {
-      "value": "30",
+      "value": "33",
       "description": "Вид: Выглядит как еда из школьной столовой"
     },
     {
-      "value": "50",
+      "value": "66",
       "description": "Вид: Выглядит сьедобно"
     },
     {
-      "value": "70",
+      "value": "100",
       "description": "Вид: Выглядит аппетитно"
     }
   ],
   "keenness": [
     {
-      "value": "30",
+      "value": "33",
       "description": "Острота: 3 перчика чили из 10"
     },
     {
-      "value": "50",
+      "value": "66",
       "description": "Острота: 5 перчиков чили из 10"
     },
     {
-      "value": "70",
+      "value": "100",
       "description": "Острота: Я ДРАКОООН Пш..пш..пш.."
     }
   ],
   "salinity": [
     {
-      "value": "30",
+      "value": "33",
       "description": "Соленость: Пресная как моя курсовая"
     },
     {
-      "value": "50",
+      "value": "66",
       "description": "Соленость: Соль в норме"
     },
     {
-      "value": "70",
+      "value": "100",
       "description": "Соленость: На вкус как Мертвое море"
     }
   ],
   "sweetness": [
     {
-      "value": "30",
+      "value": "33",
       "description": "Сладость: Не сладкий :("
     },
     {
-      "value": "50",
+      "value": "66",
       "description": "Сладость: Сахар в норме :3"
     },
     {
-      "value": "70",
+      "value": "100",
       "description": "Сладость: Диабет я иду!"
     }
   ],
   "sourness": [
     {
-      "value": "30",
+      "value": "33",
       "description": "Кислость: Лимончик бы здесь не помешал"
     },
     {
-      "value": "50",
+      "value": "66",
       "description": "Кислость: Кислый как я люблю"
     },
     {
-      "value": "70",
+      "value": "100",
       "description": "Кислость: Ну и кислятина!"
     }
   ],
   "bitter": [
     {
-      "value": "30",
+      "value": "33",
       "description": "Горькость: У кого-нибудь есть горчица?"
     },
     {
-      "value": "50",
+      "value": "66",
       "description": "Горькость: В меру горький"
     },
     {
-      "value": "70",
+      "value": "100",
       "description": "Горькость: Это что, хрен?"
     }
   ],
   "roasting": [
     {
-      "value": "30",
+      "value": "33",
       "description": "Прожарка: Не прожарено"
     },
     {
-      "value": "50",
+      "value": "66",
       "description": "Прожарка: Medium-well"
     },
     {
-      "value": "70",
+      "value": "100",
       "description": "Прожарка: Еще немного и от этого остались бы только угли"
     }
   ],
   "smell": [
     {
-      "value": "30",
+      "value": "33",
       "description": "Запах: Здесь что, кто то умер?"
     },
     {
-      "value": "50",
+      "value": "66",
       "description": "Запах: Пахнет вкусно"
     },
     {
-      "value": "70",
+      "value": "100",
       "description": "Запах: Хочу духи с таким ароматом"
     }
   ]

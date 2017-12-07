@@ -18,6 +18,9 @@ public class StorageService {
     private Map<Integer, Reaction> reactions;
     private Map<String, List<DishDescription>> dishDescriptions;
 
+    public static final int defaultValue = 50;
+    public static final int calmCoefficient = 25;
+
     public void start() {
         init();
         loadData();

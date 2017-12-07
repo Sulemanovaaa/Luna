@@ -67,14 +67,18 @@ public class TelegramBot extends TelegramLongPollingBot {
             else if (cook.getState().equals(CookStates.COOKING) && messageIsAction(message)) {
 
                 List<Integer> doReactionsId = cookService.checkReactions();
-                for (int reactionId : doReactionsId) {
-                    Reaction reaction = storageService.getReactionById(reactionId);
-                    sendMsg(message, reaction.getName());
-                    if (cookService.checkHappenedReaction(reactionId)) {
-                        cook.setState(CookStates.FREE);
-                        sendMsg(message, dishService.getDescriptionOfTheDish());
-                        cook.setEmotionProperties(new EmotionProperties());
-                        return;
+                if (doReactionsId != null) {
+                    for (int reactionId : doReactionsId) {
+                        Reaction reaction = storageService.getReactionById(reactionId);
+                        sendMsg(message, "Реакция: " + reaction.getName());
+                        if (cookService.checkHappenedReaction(reactionId)) {
+                            cook.setState(CookStates.FREE);
+                            sendMsg(message, dishService.getDescriptionOfTheDish());
+                            getCookInfo(message);
+                            cook.setEmotionProperties(new EmotionProperties());
+                            dishService.getDish().setFoodProperties(new FoodProperties());
+                            return;
+                        }
                     }
                 }
             }
@@ -92,6 +96,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
         if (recipeService.iteratorNext() && cook.getState().equals(CookStates.COOKING)) {
             Step step = recipeService.getCurrentStepInRecipe();
+            cookService.keepCalm();
             showStepAndHisAction(message, step);
 
             //show steps by timer
@@ -107,6 +112,9 @@ public class TelegramBot extends TelegramLongPollingBot {
             timer.purge();
             if (cook.getState().equals(CookStates.COOKING)) {
                 sendMsg(message, dishService.getDescriptionOfTheDish());
+                getCookInfo(message);
+                cook.setEmotionProperties(new EmotionProperties());
+                dishService.getDish().setFoodProperties(new FoodProperties());
             }
             cook.setState(CookStates.FREE);
         }
@@ -173,9 +181,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     private void applyActionOnCook(Message message, Action action) {
-        getCookInfo(message);
         cookService.changeCookProperties(action);
-        getCookInfo(message);
     }
 
     private void getCookInfo(Message message) {
