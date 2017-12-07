@@ -54,10 +54,6 @@ public class CookService {
             ReflectionUtil.setFieldValueByNameAsInt(field.getName(), cook.getEmotionProperties(), ReflectionUtil.getFieldValueByNameAsInt(action.getEffect(), field.getName()));
     }
 
-
-
-
-
     private List<Integer> checkCriticalBorders(Map<Integer, Reaction> reactions) {
         List<Integer> reactionsId = new ArrayList<>();
         for (Map.Entry<Integer, Reaction> pair : reactions.entrySet()) {

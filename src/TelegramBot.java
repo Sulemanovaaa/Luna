@@ -57,7 +57,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         Message message = update.getMessage();
         if (message != null && message.hasText()) {
             if (message.getText().equals("/help")) {
-                sendMsg(message, "Привет, я робот");
+                sendMsg(message, "Привет, я повар");
                 sendMsg(message, "Чтобы увидеть меню напиши:");
                 sendMsg(message, "Сделать заказ");
             }
