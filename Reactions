@@ -72,7 +72,7 @@
         "sweetness": 0, 
         "sourness": 20, 
         "bitter": 10, 
-        "roasting": 20, 
+        "roasting": 5, 
         "smell": 0
         }
     },
@@ -83,11 +83,11 @@
         "effect": {
             "view": 20,
             "keenness": 15,
-            "salinity": 20,
+            "salinity": 10,
             "sweetness": 5,
-            "sourness": 10, 
-            "bitter":10,
-            "roasting":20,
+            "sourness": -5, 
+            "bitter":-10,
+            "roasting":0,
             "smell":20
             }
         },
@@ -103,7 +103,7 @@
             "sweetness": -5,
             "sourness": 16, 
             "bitter": 17,
-            "roasting":20,
+            "roasting": 10,
             "smell":-5
             }
            },
@@ -119,7 +119,7 @@
             "sweetness": -10,
             "sourness": 20, 
             "bitter": 20,
-            "roasting":20,
+            "roasting": 0,
             "smell":-10
             }
            },
@@ -134,7 +134,7 @@
             "sweetness": -10,
             "sourness": 20, 
             "bitter": 30,
-            "roasting": 20,
+            "roasting": 10,
             "smell":-5
             }
            },
@@ -179,7 +179,7 @@
             "sweetness": 0,
             "sourness": 0, 
             "bitter":0,
-            "roasting":20,
+            "roasting":0,
             "smell":15
             }
            },
@@ -194,7 +194,7 @@
             "sweetness": 5,
             "sourness": 0, 
             "bitter": 0,
-            "roasting":20,
+            "roasting": 15,
             "smell":20
             }
            },
@@ -209,7 +209,7 @@
             "sweetness": 0,
             "sourness": 0, 
             "bitter":0,
-            "roasting":20,
+            "roasting":0,
             "smell":0
             
             }
