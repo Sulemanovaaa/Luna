@@ -7,11 +7,11 @@
   {
     "id": 2,
     "name": "Паста",
-    "fileName": "pizza.json"
+    "fileName": "pasta.json"
   },
   {
     "id": 3,
     "name": "Кофе",
-    "fileName": "spaghetti.json"
+    "fileName": "coffee.json"
   }
 ]
