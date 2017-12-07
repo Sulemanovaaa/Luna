@@ -207,5 +207,31 @@
       "anger": "0",
       "anticipation": "10"
     }
+  },
+  "17": {
+    "name": "Затупить нож",
+    "effect": {
+      "joy": "-20",
+      "trust": "-10",
+      "fear": "0",
+      "surprise": "30",
+      "sadness": "20",
+      "disgust": "0",
+      "anger": "40",
+      "anticipation": "-10"
+    }
+  },
+  "18": {
+    "name": "Подложить испорченные морепродукты",
+    "effect": {
+      "joy": "-30",
+      "trust": "-20",
+      "fear": "0",
+      "surprise": "-20",
+      "sadness": "-20",
+      "disgust": "-40",
+      "anger": "-50",
+      "anticipation": "-20"
+    }
   }
 }
