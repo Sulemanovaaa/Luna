@@ -1,0 +1,217 @@
+{
+  "-3":{
+        "name": "Повар порезался",
+        "emotionName" : "anticipation",
+        "emotionCriticalBorder" :10,
+        "effect": {
+            "view": 0,
+            "keenness": 0,
+            "salinity": 0,
+            "sweetness": 0,
+            "sourness": 0, 
+            "bitter": 0,
+            "roasting":0,
+            "smell":0
+            }
+           },
+    
+     "-2":{
+        "name": "Повар почувствовал себя плохо",
+        "emotionName" : "disgust",
+        "emotionCriticalBorder" :90,
+        "effect": {
+             "view": 10,
+            "keenness": 0,
+            "salinity": 10,
+            "sweetness": 0,
+            "sourness": 0, 
+            "bitter":0,
+            "roasting":20,
+            "smell":5
+            }
+           },
+         "-1": {
+        "name": "Повар взбесился и бросил готовку",
+        "emotionName" : "anger",
+        "emotionCriticalBorder" : 100,
+        "effect": {
+             "view": -100,
+            "keenness":-100,
+            "salinity":-100,
+            "sweetness":-100,
+            "sourness": -100,
+            "bitter":-100,
+            "roasting":-100,
+            "smell":-100
+        }
+    },
+    "1": {
+        "name": "Повар был взволнован и решил передохнуть",
+        "emotionName" : "fear",
+        "emotionCriticalBorder" : 80,
+        "effect": {
+         "view": -30, 
+         "keenness": -30, 
+        "salinity": 0, 
+        "sweetness": 0, 
+        "sourness": 50, 
+        "bitter": 50, 
+        "roasting": 50, 
+        "smell": -30
+        }
+    },
+    "2":{
+    "name": "Повар добавил  вкусный соуc в блюдо",
+        "emotionName" : "joy",
+        "emotionCriticalBorder" :75,
+        "effect": {
+            "view": 69,
+            "keenness": 50,
+            "salinity": 60,
+            "sweetness": 5,
+            "sourness": 10, 
+            "bitter":10,
+            "roasting":60,
+            "smell":75
+            }
+        },
+                     
+        "3":{
+    "name": "Повар пересолил мясо",
+        "emotionName" : "sadness",
+        "emotionCriticalBorder" : 90,
+        "effect": {
+             "view": 20,
+            "keenness": 30,
+            "salinity": 80,
+            "sweetness": 0,
+            "sourness": 60, 
+            "bitter":55,
+            "roasting":50,
+            "smell":-5
+            }
+           },
+     
+           "4":{
+        "name": "Повар решил не добавлять не внушающий доверия ингредиент"
+        "emotionName" : "trust",
+        "emotionCriticalBorder" :10,
+        "effect": {
+            "view": 20,
+            "keenness": 20,
+            "salinity": 50,
+            "sweetness": 0,
+            "sourness": 80, 
+            "bitter":90,
+            "roasting":50,
+            "smell":-10
+            }
+           },
+           "5":{
+        "name": "Повар сделал блюдо  горьким",
+        "emotionName" : "suprise"
+        "emotionCriticalBorder" :75,
+        "effect": {
+            "view": 10,
+            "keenness": 10,
+            "salinity": 10,
+            "sweetness": 0,
+            "sourness": 20, 
+            "bitter": 80,
+            "roasting": 50,
+            "smell":40
+            }
+           },
+           "6":{
+        "name": "Повар сделал блюдо кислым",
+        "emotionName" : "anticipation",
+        "emotionCriticalBorder" : 30,
+        "effect": {
+            "view": 40,
+            "keenness": 10,
+            "salinity": 70,
+            "sweetness": -10,
+            "sourness": 80, 
+            "bitter":50,
+            "roasting":40,
+            "smell":30
+            }
+           },
+           "7":{
+        "name": "Повар недосолил овощи",
+        "emotionName" : "anticipation",
+        "emotionCriticalBorder" :20,
+        "effect": {
+            "view":60,
+            "keenness": 0,
+            "salinity": 10,
+            "sweetness": 0,
+            "sourness": 0, 
+            "bitter": 0,
+            "roasting":50,
+            "smell":20
+            }
+           },
+            "8":{
+        "name": "Повар аккуратно порезал овощи и мясо",
+        "emotionName" : "antiсipation",
+        "emotionCriticalBorder" :90,
+        "effect": {
+            "view":78 ,
+            "keenness": 30,
+            "salinity": 50,
+            "sweetness": 0,
+            "sourness": 0, 
+            "bitter":0,
+            "roasting":50,
+            "smell":70
+            }
+           },
+           "9":{
+        "name": "Повар приготовил вкусное мясо",
+        "emotionName" : "joy",
+        "emotionCriticalBorder" :70,
+        "effect": {
+            "view":80 ,
+            "keenness": 45,
+            "salinity": 50,
+            "sweetness": 5,
+            "sourness": 0, 
+            "bitter": 0,
+            "roasting":60,
+            "smell":70
+            }
+           },
+        "10":{
+        "name": "Повар обжегся",
+        "emotionName" : "anticipation",
+        "emotionCriticalBorder" : 30,
+        "effect": {
+            "view":40 ,
+            "keenness": 20,
+            "salinity": 40,
+            "sweetness": 0,
+            "sourness": 0, 
+            "bitter":0,
+            "roasting":30,
+            "smell":30
+            }
+           },  
+          "11":{
+        "name": "Повар испортил овощи из-за тупого ножа",
+        "emotionName" : "anticipation",
+        "emotionCriticalBorder" : 20,
+        "effect": {
+            "view": 10 ,
+            "keenness": 20,
+            "salinity": 50,
+            "sweetness": 0,
+            "sourness": 0, 
+            "bitter":0,
+            "roasting":40,
+            "smell":20
+            
+            }
+      }     
+          
+}
