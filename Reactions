@@ -1,6 +1,6 @@
 {
   "-3":{
-        "name": " Повар порезался",
+        "name": "Повар порезался",
         "emotionName" : "anticipation",
         "emotionCriticalBorder" :10,
         "effect": {
@@ -154,7 +154,7 @@
            },
             "8":{
         "name": "Повар аккуратно порезал овощи и мясо",
-        "emotionName" : "antisipation",
+        "emotionName" : "antiсipation",
         "emotionCriticalBorder" :90,
         "effect": {
             "view":78 ,
