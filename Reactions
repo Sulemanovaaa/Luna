@@ -1,17 +1,32 @@
 {
+ "-4":{
+        "name": "Повар обжегся",
+        "emotionName" : "anticipation",
+        "emotionCriticalBorder" : 30,
+        "effect": {
+            "view": -10,
+            "keenness": -10,
+            "salinity": -10,
+            "sweetness": -10,
+            "sourness": -10, 
+            "bitter": -10,
+            "roasting": -10,
+            "smell": -10
+            }
+           }, 
   "-3":{
         "name": "Повар порезался",
         "emotionName" : "anticipation",
         "emotionCriticalBorder" :10,
         "effect": {
-            "view": 0,
-            "keenness": 0,
-            "salinity": 0,
-            "sweetness": 0,
-            "sourness": 0, 
-            "bitter": 0,
-            "roasting":0,
-            "smell":0
+            "view": -10,
+            "keenness": -10,
+            "salinity": -10,
+            "sweetness": -10,
+            "sourness": -10, 
+            "bitter": -10,
+            "roasting": -10,
+            "smell":-10
             }
            },
     
@@ -20,14 +35,14 @@
         "emotionName" : "disgust",
         "emotionCriticalBorder" :90,
         "effect": {
-             "view": 10,
-            "keenness": 0,
-            "salinity": 10,
-            "sweetness": 0,
-            "sourness": 0, 
-            "bitter":0,
-            "roasting":20,
-            "smell":5
+             "view": -10,
+            "keenness": -10,
+            "salinity":  -10,
+            "sweetness": -10,
+            "sourness": -10, 
+            "bitter": -10,
+            "roasting": -10,
+            "smell":-10
             }
            },
          "-1": {
@@ -35,29 +50,30 @@
         "emotionName" : "anger",
         "emotionCriticalBorder" : 100,
         "effect": {
-             "view": -100,
-            "keenness":-100,
-            "salinity":-100,
-            "sweetness":-100,
-            "sourness": -100,
-            "bitter":-100,
-            "roasting":-100,
-            "smell":-100
+             "view": -30,
+            "keenness":-30,
+            "salinity":-30,
+            "sweetness":-30,
+            "sourness": -30,
+            "bitter":-30,
+            "roasting":-30,
+            "smell":-30
         }
     },
+    
     "1": {
         "name": "Повар был взволнован и решил передохнуть",
         "emotionName" : "fear",
         "emotionCriticalBorder" : 80,
         "effect": {
-         "view": -30, 
-         "keenness": -30, 
+         "view": -10, 
+         "keenness": 0, 
         "salinity": 0, 
         "sweetness": 0, 
-        "sourness": 50, 
-        "bitter": 50, 
-        "roasting": 50, 
-        "smell": -30
+        "sourness": 20, 
+        "bitter": 10, 
+        "roasting": 5, 
+        "smell": 0
         }
     },
     "2":{
@@ -65,14 +81,14 @@
         "emotionName" : "joy",
         "emotionCriticalBorder" :75,
         "effect": {
-            "view": 69,
-            "keenness": 50,
-            "salinity": 60,
+            "view": 20,
+            "keenness": 15,
+            "salinity": 10,
             "sweetness": 5,
-            "sourness": 10, 
-            "bitter":10,
-            "roasting":60,
-            "smell":75
+            "sourness": -5, 
+            "bitter":-10,
+            "roasting":0,
+            "smell":20
             }
         },
                      
@@ -81,13 +97,13 @@
         "emotionName" : "sadness",
         "emotionCriticalBorder" : 90,
         "effect": {
-             "view": 20,
-            "keenness": 30,
-            "salinity": 80,
-            "sweetness": 0,
-            "sourness": 60, 
-            "bitter":55,
-            "roasting":50,
+             "view": 15,
+            "keenness": 15,
+            "salinity": 30,
+            "sweetness": -5,
+            "sourness": 16, 
+            "bitter": 17,
+            "roasting": 10,
             "smell":-5
             }
            },
@@ -97,13 +113,13 @@
         "emotionName" : "trust",
         "emotionCriticalBorder" :10,
         "effect": {
-            "view": 20,
-            "keenness": 20,
-            "salinity": 50,
-            "sweetness": 0,
-            "sourness": 80, 
-            "bitter":90,
-            "roasting":50,
+            "view": -10,
+            "keenness": 0,
+            "salinity": 10,
+            "sweetness": -10,
+            "sourness": 20, 
+            "bitter": 20,
+            "roasting": 0,
             "smell":-10
             }
            },
@@ -115,11 +131,11 @@
             "view": 10,
             "keenness": 10,
             "salinity": 10,
-            "sweetness": 0,
+            "sweetness": -10,
             "sourness": 20, 
-            "bitter": 80,
-            "roasting": 50,
-            "smell":40
+            "bitter": 30,
+            "roasting": 10,
+            "smell":-5
             }
            },
            "6":{
@@ -127,14 +143,14 @@
         "emotionName" : "anticipation",
         "emotionCriticalBorder" : 30,
         "effect": {
-            "view": 40,
+            "view": 10,
             "keenness": 10,
-            "salinity": 70,
+            "salinity": 20,
             "sweetness": -10,
-            "sourness": 80, 
-            "bitter":50,
-            "roasting":40,
-            "smell":30
+            "sourness": 30, 
+            "bitter":10,
+            "roasting":20,
+            "smell":0
             }
            },
            "7":{
@@ -142,14 +158,14 @@
         "emotionName" : "anticipation",
         "emotionCriticalBorder" :20,
         "effect": {
-            "view":60,
-            "keenness": 0,
-            "salinity": 10,
+            "view": 10,
+            "keenness": 5,
+            "salinity": -10,
             "sweetness": 0,
             "sourness": 0, 
             "bitter": 0,
-            "roasting":50,
-            "smell":20
+            "roasting":10,
+            "smell":0
             }
            },
             "8":{
@@ -157,14 +173,14 @@
         "emotionName" : "antiсipation",
         "emotionCriticalBorder" :90,
         "effect": {
-            "view":78 ,
-            "keenness": 30,
-            "salinity": 50,
+            "view": 30,
+            "keenness": 10,
+            "salinity": 20,
             "sweetness": 0,
             "sourness": 0, 
             "bitter":0,
-            "roasting":50,
-            "smell":70
+            "roasting":0,
+            "smell":15
             }
            },
            "9":{
@@ -172,44 +188,29 @@
         "emotionName" : "joy",
         "emotionCriticalBorder" :70,
         "effect": {
-            "view":80 ,
-            "keenness": 45,
-            "salinity": 50,
+            "view": 20,
+            "keenness": 14,
+            "salinity": 20,
             "sweetness": 5,
             "sourness": 0, 
             "bitter": 0,
-            "roasting":60,
-            "smell":70
+            "roasting": 15,
+            "smell":20
             }
            },
         "10":{
-        "name": "Повар обжегся",
-        "emotionName" : "anticipation",
-        "emotionCriticalBorder" : 30,
-        "effect": {
-            "view":40 ,
-            "keenness": 20,
-            "salinity": 40,
-            "sweetness": 0,
-            "sourness": 0, 
-            "bitter":0,
-            "roasting":30,
-            "smell":30
-            }
-           },  
-          "11":{
         "name": "Повар испортил овощи из-за тупого ножа",
         "emotionName" : "anticipation",
         "emotionCriticalBorder" : 20,
         "effect": {
-            "view": 10 ,
-            "keenness": 20,
-            "salinity": 50,
+            "view": -10,
+            "keenness": 10,
+            "salinity": 5,
             "sweetness": 0,
             "sourness": 0, 
             "bitter":0,
-            "roasting":40,
-            "smell":20
+            "roasting":0,
+            "smell":0
             
             }
       }     
