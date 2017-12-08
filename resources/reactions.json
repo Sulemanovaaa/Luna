@@ -33,7 +33,7 @@
     "-1": {
         "name": "Повар взбесился и бросил готовку",
         "emotionName" : "anger",
-        "emotionCriticalBorder" : 80,
+        "emotionCriticalBorder" : 70,
         "effect": {
             "view": -30,
             "keenness":-30,
@@ -112,7 +112,7 @@
     "5":{
         "name": "Повар сделал блюдо более горьким",
         "emotionName" : "surprise",
-        "emotionCriticalBorder" : 90,
+        "emotionCriticalBorder" : 60,
         "effect": {
             "view": 10,
             "keenness": 10,
