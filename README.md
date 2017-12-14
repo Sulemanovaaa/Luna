@@ -27,6 +27,9 @@
 
 ![alt text](https://camo.githubusercontent.com/50b84f62c431295bc84f3ad337806f8c7a233265/68747470733a2f2f70702e757365726170692e636f6d2f633834313532322f763834313532323335392f32393833322f696a6a6a7563546454416f2e6a7067)
 
+
+**Project management: https://trello.com/b/ZYz5IBr1/luna**
+
 **Ccылка на бота: https://t.me/Emotional_cookbot**
 
 
