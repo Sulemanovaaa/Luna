@@ -29,7 +29,6 @@
 
 
 **Project management: https://trello.com/b/ZYz5IBr1/luna**
-
 **Ccылка на бота: https://t.me/Emotional_cookbot**
 
 
